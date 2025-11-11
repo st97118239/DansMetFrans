@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,4 +9,5 @@ public class Song
     public Sprite coverArt;
     public AudioClip audio;
     public float bpm;
+    public List<ChartData> chart;
 }

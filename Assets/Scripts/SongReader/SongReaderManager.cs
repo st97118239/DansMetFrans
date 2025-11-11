@@ -13,6 +13,8 @@ public class SongReaderManager : MonoBehaviour
     public Image image;
     public AudioSource audioSource;
 
+    public Image poseImage;
+
     private void Start()
     {
         StartCoroutine(LoadFile());
@@ -32,6 +34,7 @@ public class SongReaderManager : MonoBehaviour
             bool hasSongData = false;
             bool hasCoverArt = false;
             bool hasSongAudio = false;
+            bool hasChart = false;
             Song song = new();
 
             // Find every file in the folder and check if it has songData
@@ -65,6 +68,11 @@ public class SongReaderManager : MonoBehaviour
                         song.songName = songData.songName;
                         song.artist = songData.artist;
                         song.bpm = songData.bpm;
+                        if (songData.chart.Count > 0)
+                        {
+                            song.chart = songData.chart;
+                            hasChart = true;
+                        }
 
                         break;
                     }
@@ -130,6 +138,9 @@ public class SongReaderManager : MonoBehaviour
                     Debug.LogWarning("No song audio found for " + song.songName);
 
                 Debug.Log("Loaded song " + song.songName);
+
+                if (hasChart)
+                    poseImage.sprite = Resources.Load<Sprite>(song.chart[0].spriteDir);
 
                 idx++;
             }

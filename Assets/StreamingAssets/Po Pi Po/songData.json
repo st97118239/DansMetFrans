@@ -1,4 +1,6 @@
 {
     "songName": "Po Pi Po",
-    "artist": "Miku :3"
-}
+    "artist": "Miku :3",
+    "bpm": 150,
+    "chart": [{"beat":1,"headPos":{"x":0.1,"y":1,"z":-0.1},"leftHandPos":{"x":-1,"y":-1,"z":-1},"rightHandPos":{"x":1,"y":1,"z":1},"spriteDir":"Test/Miku0"}]
+}   
