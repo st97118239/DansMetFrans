@@ -2,5 +2,20 @@
     "songName": "Po Pi Po",
     "artist": "Miku :3",
     "bpm": 150,
-    "chart": [{"beat":1,"headPos":{"x":0.1,"y":1,"z":-0.1},"leftHandPos":{"x":-1,"y":-1,"z":-1},"rightHandPos":{"x":1,"y":1,"z":1},"spriteDir":"Test/Miku0"}]
-}   
+    "chart": [
+        {
+            "beat": 1,
+            "headPos": [0, 1.7],
+            "leftHandPos": [-1.25, 1.75, 0.1],
+            "rightHandPos": [1.06, 0.65, 0.1],
+            "spriteDir": "Test/Miku0"
+        },
+        {
+            "beat": 3.5,
+            "headPos": [0, 1.7, 0],
+            "leftHandPos": [-1.25, 1.75, 0.1],
+            "rightHandPos": [1.06, 0.65, 0.1],
+            "spriteDir": "Test/Freddy Fazbear"
+        }
+    ]
+}
