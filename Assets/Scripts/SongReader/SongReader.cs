@@ -16,119 +16,100 @@ public static class SongReader
         int idx = 0;
         string jsonData = "";
 
-        var path = new DirectoryInfo(Application.streamingAssetsPath);
+        var path = Application.streamingAssetsPath;
 
-        // Find every folder in StreamingAssets
-        DirectoryInfo[] paths = path.GetDirectories();
+        string filePath = path + "/SongList.json";
 
-        foreach (DirectoryInfo dirInfo in paths)
+        if (path.StartsWith("jar") || path.StartsWith("http"))
         {
-            bool hasSongData = false;
-            bool hasCoverArt = false;
-            bool hasSongAudio = false;
-            bool hasChart = false;
+            UnityWebRequest request = UnityWebRequest.Get(filePath);
+            await request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+                jsonData = request.downloadHandler.text;
+        }
+        else
+            jsonData = await File.ReadAllTextAsync(filePath);
+
+        SongList songList = JsonUtility.FromJson<SongList>(jsonData);
+
+        foreach (string songListPath in songList.songs)
+        {
+            jsonData = "";
+
             Song song = new();
 
-            // Find every file in the folder and check if it has songData
-            FileInfo[] fileInfo = dirInfo.GetFiles();
-            foreach (FileInfo file in fileInfo)
+            // songData handler
+            string songPath = Application.streamingAssetsPath + songListPath + "/songData.json";
+
+            if (songPath.StartsWith("jar") || songPath.StartsWith("http"))
             {
-                if (file.Name.EndsWith(".meta")) continue;
+                UnityWebRequest request = UnityWebRequest.Get(songPath);
+                await request.SendWebRequest();
 
-                string filePath = file.DirectoryName + "\\" + file.Name;
-
-                Sprite sprite = null;
-                switch (file.Name)
+                if (request.result == UnityWebRequest.Result.Success)
                 {
-                    // songData handler
-                    case "songData.json":
-                        {
-                            if (filePath.StartsWith("jar") || filePath.StartsWith("http"))
-                            {
-                                UnityWebRequest request = UnityWebRequest.Get(filePath);
-                                await request.SendWebRequest();
-
-                                if (request.result == UnityWebRequest.Result.Success)
-                                    jsonData = request.downloadHandler.text;
-                            }
-                            else
-                                jsonData = await File.ReadAllTextAsync(filePath);
-
-                            hasSongData = true;
-                            SongData songData = JsonUtility.FromJson<SongData>(jsonData);
-
-                            song.songName = songData.songName;
-                            song.artist = songData.artist;
-                            song.bpm = songData.bpm;
-                            if (songData.chart.Count > 0)
-                            {
-                                song.chart = songData.chart;
-                                hasChart = true;
-                            }
-
-                            break;
-                        }
-                    // cover handler
-                    case "cover.png":
-                        {
-                            using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(filePath);
-                            await uwr.SendWebRequest();
-
-                            if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
-                                Debug.Log(uwr.error);
-                            else
-                            {
-                                Texture2D loadedTexture = DownloadHandlerTexture.GetContent(uwr);
-
-                                sprite = Sprite.Create(loadedTexture,
-                                    new Rect(0, 0, loadedTexture.width, loadedTexture.height), Vector2.zero);
-
-                                hasCoverArt = true;
-                            }
-
-                            if (hasCoverArt)
-                                song.coverArt = sprite;
-                            break;
-                        }
-                    // song audio handler
-                    case "song.mp3":
-                        {
-                            using UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(filePath, AudioType.MPEG);
-                            await uwr.SendWebRequest();
-
-                            if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
-                                Debug.Log(uwr.error);
-                            else
-                            {
-                                AudioClip songClip = DownloadHandlerAudioClip.GetContent(uwr);
-                                song.audio = songClip;
-                                hasSongAudio = true;
-                            }
-
-                            break;
-                        }
+                    jsonData = request.downloadHandler.text;
                 }
-
-                if (!hasSongData) continue;
-
-                if (!hasChart)
-                {
-                    Debug.LogError("No chart found for " + song.songName);
-                    continue;
-                }
-
-                if (!hasCoverArt)
-                    Debug.LogWarning("No cover art found for " + song.songName);
-
-                if (!hasSongAudio)
-                    Debug.LogWarning("No song audio found for " + song.songName);
-
-                songs.Add(song);
-                Debug.Log("Loaded song " + song.songName);
-
-                idx++;
             }
-        }
+            else
+                jsonData = await File.ReadAllTextAsync(songPath);
 
+            SongData songData = JsonUtility.FromJson<SongData>(jsonData);
+
+            if (songData.songName == string.Empty)
+            {
+                Debug.LogError("Song found with no name at " + songPath);
+            }
+
+            song.songName = songData.songName;
+            song.artist = songData.artist;
+            song.bpm = songData.bpm;
+            if (songData.chart.Count > 0)
+                song.chart = songData.chart;
+            else
+            {
+                Debug.LogError("No chart found in song " + song.songName);
+                continue;
+            }
+
+            // cover art handler
+            songPath = path + songListPath + "/cover.png";
+            Sprite sprite = null;
+
+            using UnityWebRequest coverUwr = UnityWebRequestTexture.GetTexture(songPath);
+            await coverUwr.SendWebRequest();
+
+            if (coverUwr.result == UnityWebRequest.Result.ConnectionError || coverUwr.result == UnityWebRequest.Result.ProtocolError)
+                Debug.Log(coverUwr.error);
+            else
+            {
+                Texture2D loadedTexture = DownloadHandlerTexture.GetContent(coverUwr);
+
+                sprite = Sprite.Create(loadedTexture,
+                    new Rect(0, 0, loadedTexture.width, loadedTexture.height), Vector2.zero);
+            }
+
+            song.coverArt = sprite;
+
+            // song audio handler
+            songPath = path + songListPath + "/song.mp3";
+
+            using UnityWebRequest audioUwr = UnityWebRequestMultimedia.GetAudioClip(songPath, AudioType.MPEG);
+            await audioUwr.SendWebRequest();
+
+            if (audioUwr.result == UnityWebRequest.Result.ConnectionError || audioUwr.result == UnityWebRequest.Result.ProtocolError)
+                Debug.Log(audioUwr.error);
+            else
+            {
+                AudioClip songClip = DownloadHandlerAudioClip.GetContent(audioUwr);
+                song.audio = songClip;
+            }
+
+            songs.Add(song);
+            Debug.Log("Loaded song " + song.songName);
+
+            idx++;
+        }
     }
 }
