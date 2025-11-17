@@ -5,17 +5,15 @@
     "chart": [
         {
             "beat": 1,
-            "headPos": [0, 1.7],
+            "headPos": [0, 1.79, 0],
             "leftHandPos": [-1.25, 1.75, 0.1],
-            "rightHandPos": [1.06, 0.65, 0.1],
-            "spriteDir": "Test/Miku0"
+            "rightHandPos": [1.06, 0.65, 0.1]
         },
         {
-            "beat": 3.5,
-            "headPos": [0, 1.7, 0],
-            "leftHandPos": [-1.25, 1.75, 0.1],
-            "rightHandPos": [1.06, 0.65, 0.1],
-            "spriteDir": "Test/Freddy Fazbear"
+            "beat": 1.5,
+            "headPos": [0.1, 1.6, 0],
+            "leftHandPos": [1.5, 1.3, 0],
+            "rightHandPos": [0, 1, 0.7]
         }
     ]
 }

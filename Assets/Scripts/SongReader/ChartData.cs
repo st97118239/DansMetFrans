@@ -12,7 +12,6 @@ public class ChartData
     public Vector3 headPosV => headPos.ToVector3(beat);
     public Vector3 leftHandPosV => leftHandPos.ToVector3(beat);
     public Vector3 rightHandPosV => rightHandPos.ToVector3(beat);
-    public string spriteDir;
 }
 
 public static class VectorExtensions
