@@ -528,12 +528,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 527402242}
         m_TargetAssemblyTypeName: Temp, Assembly-CSharp
-        m_MethodName: ReloadSongs
-        m_Mode: 1
+        m_MethodName: SwitchScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -811,8 +811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dede4f8b3c59bf64fb1588f9d2ac36cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Temp
-  image: {fileID: 1833364031}
-  text: {fileID: 959624919}
 --- !u!4 &527402243
 Transform:
   m_ObjectHideFlags: 0

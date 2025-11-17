@@ -9,6 +9,8 @@ public static class SongReader
 {
     public static IReadOnlyList<Song> Songs => songs;
 
+    public static int selectedSongIdx = 0;
+
     private static List<Song> songs = new();
 
     public static async Task GetSongs()
@@ -63,8 +65,8 @@ public static class SongReader
             }
 
             song.songName = songData.songName;
-            song.artist = songData.artist;
             song.bpm = songData.bpm;
+            song.startDelay = songData.startDelay;
             if (songData.chart.Count > 0)
                 song.chart = songData.chart;
             else

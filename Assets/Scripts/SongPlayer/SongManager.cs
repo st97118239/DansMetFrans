@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -18,11 +19,12 @@ public class SongManager : MonoBehaviour
     [SerializeField] private float beatStep;
     [SerializeField] private float hitTime;
     private int beatIdx;
+    private int totalBeats;
 
     public int score;
 
     public List<ChartData> chart;
-    public List<float> beats;
+    public List<int> beats;
 
     public bool isPlaying;
     public bool shouldCheckForHit;
@@ -54,45 +56,51 @@ public class SongManager : MonoBehaviour
 
         float points = headPoints + lHandPoints + rHandPoints;
 
-        score += Mathf.RoundToInt(points);
+        AddPoints(Mathf.RoundToInt(points));
 
         shouldCheckForHit = false;
     }
 
     public async void ReloadSongs()
     {
-        await SongReader.GetSongs();
+        if (SongReader.Songs.Count == 0)
+            await SongReader.GetSongs();
 
-        chart = SongReader.Songs[0].chart;
+        StartSong();
+    }
+
+    private void StartSong()
+    {
+        chart = SongReader.Songs[SongReader.selectedSongIdx].chart;
 
         foreach (ChartData chartBeat in chart)
         {
             beats.Add(chartBeat.beat);
         }
 
+        beatStep = 60 / SongReader.Songs[SongReader.selectedSongIdx].bpm;
+
         StartCoroutine(BeatLoop());
     }
 
     private IEnumerator BeatLoop()
     {
+        yield return new WaitForSeconds((SongReader.Songs[SongReader.selectedSongIdx].startDelay) / 1000);
+
         WaitForSeconds wait1Beat = new(beatStep);
 
-        foreach (float t in beats)
+        for (int i = 0; i < beats[^1]; i++)
         {
-            for (; beat - beatStep < t; beat += beatStep)
+            if (beats[beatIdx] == i + 1)
             {
-                if (Mathf.Approximately(beat, t))
-                {
-                    SetColliders();
-                }
-
-                yield return wait1Beat;
+                SetColliders();
+                beatIdx++;
             }
-
-            beatIdx++;
+            beat++;
+            yield return wait1Beat;
         }
 
-        Debug.Log("Finished loop.");
+        Debug.Log("Finished song.");
     }
 
     private void SetColliders()
@@ -113,5 +121,10 @@ public class SongManager : MonoBehaviour
         headHitCollider.transform.position = Vector3.zero;
         leftHandHitCollider.transform.position = Vector3.zero;
         rightHandHitCollider.transform.position = Vector3.zero;
+    }
+
+    private void AddPoints(int pointAmt)
+    {
+        score += pointAmt;
     }
 }

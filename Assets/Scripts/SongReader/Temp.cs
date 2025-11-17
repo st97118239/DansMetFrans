@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Temp : MonoBehaviour
 {
@@ -15,5 +16,10 @@ public class Temp : MonoBehaviour
         {
             Debug.Log("Found song " + song.songName);
         }
+    }
+
+    public void SwitchScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SongReaderTest.unity
     guid: b66c32e3477e9404a9e7f8866ef1d56e
+  - enabled: 1
+    path: Assets/Scenes/SongPlayerTest.unity
+    guid: e530e89a3a487cb4cad1f3ae5965b661
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c16c5c32d6e48cb47a3620f018fe4777, type: 2}

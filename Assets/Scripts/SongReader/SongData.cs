@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class SongData
 {
     public string songName;
-    public string artist;
     public float bpm;
+    public float startDelay;
     public List<ChartData> chart;
 }

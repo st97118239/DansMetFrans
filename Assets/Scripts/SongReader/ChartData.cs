@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class ChartData
 {
-    public float beat;
+    public int beat;
     public float[] headPos;
     public float[] leftHandPos;
     public float[] rightHandPos;

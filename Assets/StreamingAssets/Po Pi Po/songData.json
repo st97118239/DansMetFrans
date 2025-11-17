@@ -1,19 +1,25 @@
 {
     "songName": "Po Pi Po",
-    "artist": "Miku :3",
     "bpm": 150,
+    "startDelay": 5187,
     "chart": [
         {
-            "beat": 1,
+            "beat": 5,
             "headPos": [0, 1.79, 0],
             "leftHandPos": [-1.25, 1.75, 0.1],
             "rightHandPos": [1.06, 0.65, 0.1]
         },
         {
-            "beat": 1.5,
+            "beat": 9,
             "headPos": [0.1, 1.6, 0],
             "leftHandPos": [1.5, 1.3, 0],
             "rightHandPos": [0, 1, 0.7]
+        },
+        {
+            "beat": 17,
+            "headPos": [0, 1.6, 0.2],
+            "leftHandPos": [1.2, 1.1, -0.1],
+            "rightHandPos": [0.1, 0.8, 0.6]
         }
     ]
 }
