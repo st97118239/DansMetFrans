@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SongManager : MonoBehaviour
 {
@@ -101,6 +102,9 @@ public class SongManager : MonoBehaviour
         }
 
         Debug.Log("Finished song.");
+        PlayerPrefs.SetString("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score.ToString());
+
+        SwitchScene(0);
     }
 
     private void SetColliders()
@@ -126,5 +130,10 @@ public class SongManager : MonoBehaviour
     private void AddPoints(int pointAmt)
     {
         score += pointAmt;
+    }
+
+    public void SwitchScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

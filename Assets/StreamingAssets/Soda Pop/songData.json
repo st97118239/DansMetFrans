@@ -1,4 +1,19 @@
 {
     "songName": "Soda Pop",
-    "artist": "idk"
+    "bpm": 70,
+    "startDelay": 10,
+    "chart": [
+        {
+            "beat": 5,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-1.25, 1.75, 0.1],
+            "rightHandPos": [1.06, 0.65, 0.1]
+        },
+        {
+            "beat": 9,
+            "headPos": [0.1, 1.6, 0],
+            "leftHandPos": [1.5, 1.3, 0],
+            "rightHandPos": [0, 1, 0.7]
+        }
+    ]
 }

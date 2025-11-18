@@ -94,6 +94,25 @@ public static class SongReader
 
             song.coverArt = sprite;
 
+            // title art handler
+            songPath = path + songListPath + "/title.png";
+            sprite = null;
+
+            using UnityWebRequest titleUwr = UnityWebRequestTexture.GetTexture(songPath);
+            await titleUwr.SendWebRequest();
+
+            if (titleUwr.result == UnityWebRequest.Result.ConnectionError || titleUwr.result == UnityWebRequest.Result.ProtocolError)
+                Debug.Log(titleUwr.error);
+            else
+            {
+                Texture2D loadedTexture = DownloadHandlerTexture.GetContent(titleUwr);
+
+                sprite = Sprite.Create(loadedTexture,
+                    new Rect(0, 0, loadedTexture.width, loadedTexture.height), Vector2.zero);
+            }
+
+            song.titleArt = sprite;
+
             // song audio handler
             songPath = path + songListPath + "/song.mp3";
 
