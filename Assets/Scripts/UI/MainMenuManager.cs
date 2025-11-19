@@ -6,10 +6,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void ButtonStart()
     {
-        Debug.Log("Start");
-
-
-
         gameObject.SetActive(false);
         songSelectManager.Show();
     }

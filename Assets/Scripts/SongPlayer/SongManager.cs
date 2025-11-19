@@ -1,34 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SongManager : MonoBehaviour
 {
-    public BoxCollider headHitCollider;
-    public BoxCollider leftHandHitCollider;
-    public BoxCollider rightHandHitCollider;
+    [SerializeField] private BoxCollider headHitCollider;
+    [SerializeField] private BoxCollider leftHandHitCollider;
+    [SerializeField] private BoxCollider rightHandHitCollider;
 
-    public BoxCollider headCollider;
-    public BoxCollider leftHandCollider;
-    public BoxCollider rightHandCollider;
+    [SerializeField] private BoxCollider headCollider;
+    [SerializeField] private BoxCollider leftHandCollider;
+    [SerializeField] private BoxCollider rightHandCollider;
 
     [SerializeField] private float maxHitDistance;
 
-    public float beat;
-    [SerializeField] private float beatStep;
+    private float beat;
+    private float beatStep;
     [SerializeField] private float hitTime;
     private int beatIdx;
     private int totalBeats;
 
-    public int score;
+    private int score;
 
-    public List<ChartData> chart;
-    public List<int> beats;
+    private List<ChartData> chart;
+    private List<int> beats;
 
-    public bool isPlaying;
-    public bool shouldCheckForHit;
+    private bool isPlaying;
+    private bool shouldCheckForHit;
 
     private Coroutine resetCollidersCoroutine;
 
