@@ -41,7 +41,7 @@ public class SongSelectManager : MonoBehaviour
         coverImage.sprite = SongReader.Songs[idx].coverArt;
         titleImage.sprite = SongReader.Songs[idx].titleArt;
 
-        string highScore = PlayerPrefs.GetString("hs" + SongReader.Songs[idx].songName);
+        string highScore = PlayerPrefs.GetInt("hs" + SongReader.Songs[idx].songName).ToString();
 
         if (highScore == string.Empty) 
             highScore = "Not yet played";

@@ -9,25 +9,31 @@ public class SongManager : MonoBehaviour
     [SerializeField] private BoxCollider leftHandHitCollider;
     [SerializeField] private BoxCollider rightHandHitCollider;
 
+    [SerializeField] private GameObject headPrev;
+    [SerializeField] private GameObject leftHandPrev;
+    [SerializeField] private GameObject rightHandPrev;
+
     [SerializeField] private BoxCollider headCollider;
     [SerializeField] private BoxCollider leftHandCollider;
     [SerializeField] private BoxCollider rightHandCollider;
 
     [SerializeField] private float maxHitDistance;
 
-    private float beat;
     private float beatStep;
     [SerializeField] private float hitTime;
-    private int beatIdx;
+    private int beat;
+    private int beatLoopIdx;
+    [SerializeField] private int previewBeats;
     private int totalBeats;
 
     private int score;
 
     private List<ChartData> chart;
-    private List<int> beats;
+    private readonly List<int> beats = new();
 
     private bool isPlaying;
     private bool shouldCheckForHit;
+    private bool hasPreview;
 
     private Coroutine resetCollidersCoroutine;
 
@@ -73,10 +79,8 @@ public class SongManager : MonoBehaviour
     {
         chart = SongReader.Songs[SongReader.selectedSongIdx].chart;
 
-        foreach (ChartData chartBeat in chart)
-        {
+        foreach (ChartData chartBeat in chart) 
             beats.Add(chartBeat.beat);
-        }
 
         beatStep = 60 / SongReader.Songs[SongReader.selectedSongIdx].bpm;
 
@@ -85,23 +89,35 @@ public class SongManager : MonoBehaviour
 
     private IEnumerator BeatLoop()
     {
-        yield return new WaitForSeconds((SongReader.Songs[SongReader.selectedSongIdx].startDelay) / 1000);
+        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].startDelay / 1000);
 
         WaitForSeconds wait1Beat = new(beatStep);
 
-        for (int i = 0; i < beats[^1]; i++)
+        for (beatLoopIdx = 0; beatLoopIdx < beats[^1]; beatLoopIdx++)
         {
-            if (beats[beatIdx] == i + 1)
+            if (beats[beat] == beatLoopIdx + 1)
             {
                 SetColliders();
-                beatIdx++;
+                beat++;
             }
-            beat++;
+
+            if (!hasPreview && beat <= beats.Count - 1)
+            {
+                float beatsTillHit = beatLoopIdx + 1 + previewBeats - beats[beat];
+                if (beats.Count >= beat + 1 && beatsTillHit <= previewBeats && beatsTillHit > 0)
+                    SetPreview();
+            }
+
             yield return wait1Beat;
         }
 
+        for (int i = 0; i < 5; i++)
+            yield return wait1Beat;
+
         Debug.Log("Finished song.");
-        PlayerPrefs.SetString("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score.ToString());
+
+        if (score > PlayerPrefs.GetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName))
+            PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
 
         SwitchScene(0);
     }
@@ -110,20 +126,38 @@ public class SongManager : MonoBehaviour
     {
         if (resetCollidersCoroutine != null)
             StopCoroutine(resetCollidersCoroutine);
-        headHitCollider.transform.position = chart[beatIdx].headPosV;
-        leftHandHitCollider.transform.position = chart[beatIdx].leftHandPosV;
-        rightHandHitCollider.transform.position = chart[beatIdx].rightHandPosV;
+        if (hasPreview)
+            ResetPreview();
+        headHitCollider.transform.position = chart[beat].headPosV;
+        leftHandHitCollider.transform.position = chart[beat].leftHandPosV;
+        rightHandHitCollider.transform.position = chart[beat].rightHandPosV;
         shouldCheckForHit = true;
         resetCollidersCoroutine = StartCoroutine(ResetColliders());
+    }
+
+    private void SetPreview()
+    {
+        hasPreview = true;
+        headPrev.transform.position = chart[beat].headPosV;
+        leftHandPrev.transform.position = chart[beat].leftHandPosV;
+        rightHandPrev.transform.position = chart[beat].rightHandPosV; 
     }
 
     private IEnumerator ResetColliders()
     {
         yield return new WaitForSeconds(hitTime);
         shouldCheckForHit = false;
-        headHitCollider.transform.position = Vector3.zero;
-        leftHandHitCollider.transform.position = Vector3.zero;
-        rightHandHitCollider.transform.position = Vector3.zero;
+        headHitCollider.transform.position = Vector3.down;
+        leftHandHitCollider.transform.position = Vector3.down;
+        rightHandHitCollider.transform.position = Vector3.down;
+    }
+
+    private void ResetPreview()
+    {
+        hasPreview = false;
+        headPrev.transform.position = Vector3.down;
+        leftHandPrev.transform.position = Vector3.down;
+        rightHandPrev.transform.position = Vector3.down;
     }
 
     private void AddPoints(int pointAmt)
