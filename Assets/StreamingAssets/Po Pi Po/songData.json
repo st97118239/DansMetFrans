@@ -1,25 +1,27 @@
 {
     "songName": "Po Pi Po",
     "bpm": 150,
-    "startDelay": 5187,
+    "startDelay": 5.187,
     "chart": [
         {
             "beat": 5,
             "headPos": [0, 1.79, 0],
-            "leftHandPos": [-1.25, 1.75, 0.1],
-            "rightHandPos": [1.06, 0.65, 0.1]
+            "leftHandPos": [-0.961, 1.55, 0.098],
+            "rightHandPos": [0.955, 0.652, 0.098]
         },
         {
             "beat": 9,
-            "headPos": [0.1, 1.6, 0],
-            "leftHandPos": [1.5, 1.3, 0],
-            "rightHandPos": [0, 1, 0.7]
+            "headPos": [0.1, 1.8, 0],
+            "leftHandPos": [-0.313, 1.118, 0.837],
+            "rightHandPos": [0.313, 1.118, 0.837]
         },
         {
             "beat": 17,
-            "headPos": [0, 1.6, 0.2],
-            "leftHandPos": [1.2, 1.1, -0.1],
-            "rightHandPos": [0.1, 0.8, 0.6]
+            "headPos": [0, 1.8, 0.1],
+            "leftHandPos": [-0.313, 1.5, 0.837],
+            "rightHandPos": [0.313, 1.5, 0.837]
         }
     ]
 }
+
+ 

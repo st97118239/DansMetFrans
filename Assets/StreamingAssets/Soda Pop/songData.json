@@ -1,7 +1,7 @@
 {
     "songName": "Soda Pop",
     "bpm": 70,
-    "startDelay": 10,
+    "startDelay": 0.0,
     "chart": [
         {
             "beat": 5,

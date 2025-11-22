@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [System.Serializable]
@@ -18,9 +17,13 @@ public static class VectorExtensions
 {
     public static Vector3 ToVector3(this float[] floatValues, float beat)
     {
-        if (floatValues.Length == 3)
-            return new Vector3(floatValues[0], floatValues[1], floatValues[2]);
+        if (floatValues != null)
+        {
+            if (floatValues.Length == 3)
+                return new Vector3(floatValues[0], floatValues[1], floatValues[2]);
+        }
 
-        throw new ArgumentException("Invalid vector at beat " + beat);
+        Debug.LogError("Invalid vector at beat " + beat);
+        return Vector3.zero;
     }
 }

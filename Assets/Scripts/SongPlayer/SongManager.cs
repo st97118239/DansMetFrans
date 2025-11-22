@@ -32,7 +32,6 @@ public class SongManager : MonoBehaviour
     private readonly List<int> beats = new();
 
     private bool isPlaying;
-    private bool shouldCheckForHit;
     private bool hasPreview;
 
     private Coroutine resetCollidersCoroutine;
@@ -40,31 +39,6 @@ public class SongManager : MonoBehaviour
     private void Start()
     {
         ReloadSongs();
-    }
-
-    private void Update()
-    {
-        if (!shouldCheckForHit) return;
-
-        float headDist = Vector3.Distance(headHitCollider.transform.position, headCollider.transform.position);
-
-        if (!(headDist <= maxHitDistance)) return;
-        float lHandDist = Vector3.Distance(leftHandHitCollider.transform.position, leftHandCollider.transform.position);
-
-        if (!(lHandDist <= maxHitDistance)) return;
-        float rHandDist = Vector3.Distance(rightHandHitCollider.transform.position, rightHandCollider.transform.position);
-
-        if (!(rHandDist <= maxHitDistance)) return;
-
-        float headPoints = (1 - headDist) * 100;
-        float lHandPoints = (1 - lHandDist) * 100;
-        float rHandPoints = (1 - rHandDist) * 100;
-
-        float points = headPoints + lHandPoints + rHandPoints;
-
-        AddPoints(Mathf.RoundToInt(points));
-
-        shouldCheckForHit = false;
     }
 
     public async void ReloadSongs()
@@ -89,7 +63,7 @@ public class SongManager : MonoBehaviour
 
     private IEnumerator BeatLoop()
     {
-        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].startDelay / 1000);
+        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].startDelay);
 
         WaitForSeconds wait1Beat = new(beatStep);
 
@@ -131,7 +105,12 @@ public class SongManager : MonoBehaviour
         headHitCollider.transform.position = chart[beat].headPosV;
         leftHandHitCollider.transform.position = chart[beat].leftHandPosV;
         rightHandHitCollider.transform.position = chart[beat].rightHandPosV;
-        shouldCheckForHit = true;
+
+        // For chart testing
+        //headCollider.transform.position = chart[beat].headPosV;
+        //leftHandCollider.transform.position = chart[beat].leftHandPosV;
+        //rightHandCollider.transform.position = chart[beat].rightHandPosV;
+
         resetCollidersCoroutine = StartCoroutine(ResetColliders());
     }
 
@@ -146,7 +125,7 @@ public class SongManager : MonoBehaviour
     private IEnumerator ResetColliders()
     {
         yield return new WaitForSeconds(hitTime);
-        shouldCheckForHit = false;
+        CalculatePoints();
         headHitCollider.transform.position = Vector3.down;
         leftHandHitCollider.transform.position = Vector3.down;
         rightHandHitCollider.transform.position = Vector3.down;
@@ -158,6 +137,33 @@ public class SongManager : MonoBehaviour
         headPrev.transform.position = Vector3.down;
         leftHandPrev.transform.position = Vector3.down;
         rightHandPrev.transform.position = Vector3.down;
+    }
+
+    private void CalculatePoints()
+    {
+        float headDist = Vector3.Distance(headHitCollider.transform.position, headCollider.transform.position);
+
+        if (headDist <= maxHitDistance)
+        {
+            float headPoints = (1 - headDist) * 100;
+            AddPoints(Mathf.RoundToInt(headPoints));
+        }
+
+        float lHandDist = Vector3.Distance(leftHandHitCollider.transform.position, leftHandCollider.transform.position);
+
+        if (lHandDist <= maxHitDistance)
+        {
+            float lHandPoints = (1 - lHandDist) * 100;
+            AddPoints(Mathf.RoundToInt(lHandPoints));
+        }
+
+        float rHandDist = Vector3.Distance(rightHandHitCollider.transform.position, rightHandCollider.transform.position);
+
+        if (rHandDist <= maxHitDistance)
+        {
+            float rHandPoints = (1 - rHandDist) * 100;
+            AddPoints(Mathf.RoundToInt(rHandPoints));
+        }
     }
 
     private void AddPoints(int pointAmt)
