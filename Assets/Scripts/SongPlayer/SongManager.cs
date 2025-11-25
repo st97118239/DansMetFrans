@@ -17,6 +17,10 @@ public class SongManager : MonoBehaviour
     [SerializeField] private BoxCollider leftHandCollider;
     [SerializeField] private BoxCollider rightHandCollider;
 
+    [SerializeField] private Transform xrOriginTrans;
+    [SerializeField] private Transform camTrans;
+    [SerializeField] private Transform[] objectsTrans;
+
     [SerializeField] private float maxHitDistance;
 
     private float beatStep;
@@ -24,17 +28,26 @@ public class SongManager : MonoBehaviour
     private int beat;
     private int beatLoopIdx;
     [SerializeField] private int previewBeats;
-    private int totalBeats;
 
     private int score;
 
     private List<ChartData> chart;
     private readonly List<int> beats = new();
 
-    private bool isPlaying;
     private bool hasPreview;
 
     private Coroutine resetCollidersCoroutine;
+
+    private void Awake()
+    {
+        camTrans.localPosition = new Vector3(0, Settings.height + Settings.heightDiff, 0);
+
+        foreach (Transform trans in objectsTrans) 
+        {
+            trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + Settings.heightDiff, trans.localPosition.z);
+        }
+
+    }
 
     private void Start()
     {
