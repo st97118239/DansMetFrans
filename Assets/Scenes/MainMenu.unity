@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751636938568287372, guid: abac0c02a45392547be1eb68575e830e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3195318532924369126, guid: abac0c02a45392547be1eb68575e830e, type: 3}
       propertyPath: m_RequestedTrackingOriginMode

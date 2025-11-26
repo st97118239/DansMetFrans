@@ -5,17 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class SongManager : MonoBehaviour
 {
-    [SerializeField] private BoxCollider headHitCollider;
-    [SerializeField] private BoxCollider leftHandHitCollider;
-    [SerializeField] private BoxCollider rightHandHitCollider;
+    [SerializeField] private ScoreScreenManager scoreScreenManager;
+
+    [SerializeField] private Transform headHitCollider;
+    [SerializeField] private Transform leftHandHitCollider;
+    [SerializeField] private Transform rightHandHitCollider;
 
     [SerializeField] private GameObject headPrev;
     [SerializeField] private GameObject leftHandPrev;
     [SerializeField] private GameObject rightHandPrev;
 
-    [SerializeField] private BoxCollider headCollider;
-    [SerializeField] private BoxCollider leftHandCollider;
-    [SerializeField] private BoxCollider rightHandCollider;
+    [SerializeField] private Transform headCollider;
+    [SerializeField] private Transform leftHandCollider;
+    [SerializeField] private Transform rightHandCollider;
+
+    [SerializeField] private GameObject[] handIndicators;
 
     [SerializeField] private Transform xrOriginTrans;
     [SerializeField] private Transform camTrans;
@@ -40,13 +44,13 @@ public class SongManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Settings.height == 0)
+            Settings.SetHeight(camTrans.localPosition.y + 1);
+
         camTrans.localPosition = new Vector3(0, Settings.height + Settings.heightDiff, 0);
 
-        foreach (Transform trans in objectsTrans) 
-        {
+        foreach (Transform trans in objectsTrans)
             trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + Settings.heightDiff, trans.localPosition.z);
-        }
-
     }
 
     private void Start()
@@ -106,7 +110,7 @@ public class SongManager : MonoBehaviour
         if (score > PlayerPrefs.GetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName))
             PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
 
-        SwitchScene(0);
+        OpenScoreScreen();
     }
 
     private void SetColliders()
@@ -154,7 +158,7 @@ public class SongManager : MonoBehaviour
 
     private void CalculatePoints()
     {
-        float headDist = Vector3.Distance(headHitCollider.transform.position, headCollider.transform.position);
+        float headDist = Vector3.Distance(headHitCollider.position, headCollider.position);
 
         if (headDist <= maxHitDistance)
         {
@@ -162,7 +166,7 @@ public class SongManager : MonoBehaviour
             AddPoints(Mathf.RoundToInt(headPoints));
         }
 
-        float lHandDist = Vector3.Distance(leftHandHitCollider.transform.position, leftHandCollider.transform.position);
+        float lHandDist = Vector3.Distance(leftHandHitCollider.position, leftHandCollider.position);
 
         if (lHandDist <= maxHitDistance)
         {
@@ -170,7 +174,7 @@ public class SongManager : MonoBehaviour
             AddPoints(Mathf.RoundToInt(lHandPoints));
         }
 
-        float rHandDist = Vector3.Distance(rightHandHitCollider.transform.position, rightHandCollider.transform.position);
+        float rHandDist = Vector3.Distance(rightHandHitCollider.position, rightHandCollider.position);
 
         if (rHandDist <= maxHitDistance)
         {
@@ -184,8 +188,13 @@ public class SongManager : MonoBehaviour
         score += pointAmt;
     }
 
-    public void SwitchScene(int scene)
+    public void OpenScoreScreen()
     {
-        SceneManager.LoadScene(scene);
+        scoreScreenManager.Show(score);
+
+        foreach (GameObject obj in handIndicators)
+        {
+            obj.SetActive(true);
+        }
     }
 }
