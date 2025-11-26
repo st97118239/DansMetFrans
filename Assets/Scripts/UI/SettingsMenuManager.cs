@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SettingsMenuManager : MonoBehaviour
 {
+    [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private Transform camTrans;
 
     private void Awake()
@@ -10,9 +11,20 @@ public class SettingsMenuManager : MonoBehaviour
         CalcHeight();
     }
 
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        gameObject.SetActive(false);
+        mainMenuManager.Show();
+    }
+
     public void CalcHeight()
     {
-        Settings.SetHeight(camTrans.localPosition.y + 1); // Adding + 1 due to the camTrans being from Camera Offset, which doesn't include the 1 meter from XR Origin
+        Settings.SetHeight(camTrans.localPosition.y + 1);
         Debug.Log(Settings.height);
     }
 }

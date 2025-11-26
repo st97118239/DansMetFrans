@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3054992168098187581}
   - component: {fileID: 9133735331852191155}
   m_Layer: 5
-  m_Name: Settings button
+  m_Name: Settings Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3054992168098187581}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6169836182365251074}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ButtonSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1311215746837658656
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +629,7 @@ GameObject:
   - component: {fileID: 3090120977564962583}
   - component: {fileID: 6327607169947348259}
   m_Layer: 5
-  m_Name: Start button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +736,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3090120977564962583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6169836182365251074}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ButtonStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5904099792025955566
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1384990935976412401
 RectTransform:
   m_ObjectHideFlags: 0
@@ -866,6 +890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   songSelectManager: {fileID: 0}
+  settingsMenuManager: {fileID: 0}
 --- !u!1 &6491521167794730344
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +904,7 @@ GameObject:
   - component: {fileID: 1417273062976243366}
   - component: {fileID: 4528756843770322032}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Quit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +1011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1417273062976243366}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6169836182365251074}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ButtonQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8253315694036875976
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1036,7 @@ GameObject:
   - component: {fileID: 4056284060416999975}
   - component: {fileID: 2361749020035264274}
   m_Layer: 5
-  m_Name: Titel
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,7 +1111,7 @@ GameObject:
   - component: {fileID: 2113249658506731228}
   - component: {fileID: 818321861894469912}
   m_Layer: 5
-  m_Name: Background panel
+  m_Name: Background Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

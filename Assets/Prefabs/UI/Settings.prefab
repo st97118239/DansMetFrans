@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2349665795771978713}
   - component: {fileID: 2471908524691299945}
   m_Layer: 5
-  m_Name: Back button
+  m_Name: Back Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2349665795771978713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284364527736281008}
+        m_TargetAssemblyTypeName: SettingsMenuManager, Assembly-CSharp
+        m_MethodName: BackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &671978217298000963
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +145,7 @@ GameObject:
   - component: {fileID: 407229038273305268}
   - component: {fileID: 3423652437337760635}
   m_Layer: 5
-  m_Name: Background panel settings
+  m_Name: Background Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +220,7 @@ GameObject:
   - component: {fileID: 539594573944462948}
   - component: {fileID: 8417256635497091168}
   m_Layer: 5
-  m_Name: Titel settings
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +295,7 @@ GameObject:
   - component: {fileID: 8604269495596192605}
   - component: {fileID: 5213770381037051670}
   m_Layer: 5
-  m_Name: Sfx text
+  m_Name: Sfx Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +702,7 @@ GameObject:
   - component: {fileID: 9130625484208786734}
   - component: {fileID: 8303931368843733625}
   m_Layer: 5
-  m_Name: Sfx slider
+  m_Name: Sfx Volume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,7 +1203,7 @@ GameObject:
   - component: {fileID: 6014571238331715379}
   - component: {fileID: 3999526182542905088}
   m_Layer: 5
-  m_Name: Music volume slider
+  m_Name: Music Volume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1448,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebfdaa11c934064e9084a02cc426636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuManager
+  mainMenuManager: {fileID: 0}
   camTrans: {fileID: 0}
 --- !u!1 &8399407646443417502
 GameObject:
@@ -1497,7 +1510,7 @@ GameObject:
   - component: {fileID: 5840510678764371637}
   - component: {fileID: 1019362187041806079}
   m_Layer: 5
-  m_Name: Music volume text
+  m_Name: Music Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1634,7 +1647,7 @@ GameObject:
   - component: {fileID: 6222791465475935152}
   - component: {fileID: 1165791535934315997}
   m_Layer: 5
-  m_Name: Reset hight button
+  m_Name: Reset Height Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1741,7 +1754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6222791465475935152}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284364527736281008}
+        m_TargetAssemblyTypeName: SettingsMenuManager, Assembly-CSharp
+        m_MethodName: CalcHeight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8635215002351274261
 GameObject:
   m_ObjectHideFlags: 0

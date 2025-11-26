@@ -3,7 +3,12 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private SongSelectManager songSelectManager;
-   
+    [SerializeField] private SettingsMenuManager settingsMenuManager;
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
 
     public void ButtonStart()
     {
@@ -13,7 +18,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void ButtonSettings()
     {
-        Debug.Log("Settings");
+        gameObject.SetActive(false);
+        settingsMenuManager.Show();
     }
 
     public void ButtonQuit()

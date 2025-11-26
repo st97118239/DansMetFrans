@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class SongSelectManager : MonoBehaviour
 {
+    [SerializeField] private MainMenuManager mainMenuManager;
+
     [SerializeField] private Image coverImage;
     [SerializeField] private Image titleImage;
     [SerializeField] private TMP_Text highScoreText;
 
+    [SerializeField] private int songPlayerSceneIdx;
+
     private int idx;
     private int maxIdx;
-
-    public void Start()
-    {
-        maxIdx = SongReader.Songs.Count - 1;
-    }
-
+    
     public void Show()
     {
-        LoadSongs();
+        LoadSongList();
+    }
+
+    public void BackButton()
+    {
+        gameObject.SetActive(false);
+        mainMenuManager.Show();
+
     }
 
     public void ButtonNext()
@@ -49,20 +55,23 @@ public class SongSelectManager : MonoBehaviour
         highScoreText.text = highScore;
     }
 
-    public void SwitchScene(int scene)
+    public void PlaySong()
     {
         SongReader.selectedSongIdx = idx;
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(songPlayerSceneIdx);
     }
 
-    public async void LoadSongs()
+    public async void LoadSongList()
     {
-        await SongReader.GetSongs();
+        if (SongReader.Songs.Count == 0)
+            await SongReader.GetSongs();
 
         foreach (Song song in SongReader.Songs)
         {
             Debug.Log("Found song " + song.songName);
         }
+
+        maxIdx = SongReader.Songs.Count - 1;
 
         gameObject.SetActive(true);
         LoadSong();

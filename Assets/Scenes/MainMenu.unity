@@ -254,18 +254,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5094658653404101892, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: camTrans
+      value: 
+      objectReference: {fileID: 588571086}
+    - target: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: mainMenuManager
+      value: 
+      objectReference: {fileID: 8866652478058810443}
     - target: {fileID: 5464546459352132065, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -346,66 +342,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6748298539081447175, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
-    - target: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 466217616}
-    - targetCorrespondingSourceObject: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 466217615}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dcc926259093dd41872e1732040f555, type: 3}
---- !u!1 &466217614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+--- !u!114 &466217615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
   m_PrefabInstance: {fileID: 466217613}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &466217615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466217614}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ebfdaa11c934064e9084a02cc426636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuManager
-  camTrans: {fileID: 588571086}
---- !u!114 &466217616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466217614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
-  m_IgnoreReversedGraphics: 0
-  m_CheckFor2DOcclusion: 0
-  m_CheckFor3DOcclusion: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RaycastTriggerInteraction: 1
 --- !u!1001 &588571085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,10 +535,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Song select menu
       objectReference: {fileID: 0}
-    - target: {fileID: 3885844632017678494, guid: 0b2e98cc8a08541438dc20f70dc0fe7b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4084857697967856382, guid: 0b2e98cc8a08541438dc20f70dc0fe7b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -663,6 +615,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9061070193978367953, guid: 0b2e98cc8a08541438dc20f70dc0fe7b, type: 3}
+      propertyPath: mainMenuManager
+      value: 
+      objectReference: {fileID: 8866652478058810443}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -773,17 +729,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5904099792025955566, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6169836182365251074, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
       propertyPath: songSelectManager
       value: 
       objectReference: {fileID: 1998749851}
+    - target: {fileID: 6169836182365251074, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
+      propertyPath: settingsMenuManager
+      value: 
+      objectReference: {fileID: 466217615}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
+--- !u!114 &8866652478058810443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6169836182365251074, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
+  m_PrefabInstance: {fileID: 8866652478058810442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5890b94eb17e74ea7de429612e81b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
