@@ -108,10 +108,15 @@ public class SongManager : MonoBehaviour
 
         Debug.Log("Finished song.");
 
-        if (score > PlayerPrefs.GetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName))
-            PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
+        bool isNewHighScore = false;
 
-        OpenScoreScreen();
+        if (score > PlayerPrefs.GetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName))
+        {
+            isNewHighScore = true;
+            PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
+        }
+
+        OpenScoreScreen(isNewHighScore);
     }
 
     private void SetColliders()
@@ -189,9 +194,9 @@ public class SongManager : MonoBehaviour
         score += pointAmt;
     }
 
-    public void OpenScoreScreen()
+    public void OpenScoreScreen(bool isNewHighScore)
     {
-        scoreScreenManager.Show(score);
+        scoreScreenManager.Show(score, isNewHighScore);
 
         foreach (GameObject obj in handIndicators)
         {

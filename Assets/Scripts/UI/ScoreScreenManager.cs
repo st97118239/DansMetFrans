@@ -11,7 +11,7 @@ public class ScoreScreenManager : MonoBehaviour
 
     [SerializeField] private int mainMenuSceneIdx;
 
-    public void Show(int points)
+    public void Show(int points, bool newHighScore)
     {
         pointsText.text = points.ToString();
 
