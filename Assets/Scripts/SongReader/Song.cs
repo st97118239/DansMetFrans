@@ -9,6 +9,7 @@ public class Song
     public Sprite titleArt;
     public AudioClip audio;
     public float bpm;
-    public float startDelay;
+    public float chartStartDelay;
+    public float audioStartDelay;
     public List<ChartData> chart;
 }

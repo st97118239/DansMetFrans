@@ -15,7 +15,6 @@ public static class SongReader
 
     public static async Task GetSongs()
     {
-        int idx = 0;
         string jsonData = "";
 
         var path = Application.streamingAssetsPath;
@@ -66,7 +65,8 @@ public static class SongReader
 
             song.songName = songData.songName;
             song.bpm = songData.bpm;
-            song.startDelay = songData.startDelay;
+            song.chartStartDelay = songData.chartStartDelay;
+            song.audioStartDelay = songData.audioStartDelay;
             if (songData.chart.Count > 0)
                 song.chart = songData.chart;
             else
@@ -129,8 +129,6 @@ public static class SongReader
 
             songs.Add(song);
             Debug.Log("Loaded song " + song.songName);
-
-            idx++;
         }
     }
 }

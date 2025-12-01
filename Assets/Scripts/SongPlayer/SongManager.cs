@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SongManager : MonoBehaviour
 {
     [SerializeField] private ScoreScreenManager scoreScreenManager;
+    [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private Transform headHitCollider;
     [SerializeField] private Transform leftHandHitCollider;
@@ -76,11 +76,12 @@ public class SongManager : MonoBehaviour
         beatStep = 60 / SongReader.Songs[SongReader.selectedSongIdx].bpm;
 
         StartCoroutine(BeatLoop());
+        audioManager.Load();
     }
 
     private IEnumerator BeatLoop()
     {
-        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].startDelay);
+        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].chartStartDelay);
 
         WaitForSeconds wait1Beat = new(beatStep);
 

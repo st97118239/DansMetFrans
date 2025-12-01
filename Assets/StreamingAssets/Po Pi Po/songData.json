@@ -1,7 +1,8 @@
 {
     "songName": "Po Pi Po",
     "bpm": 150,
-    "startDelay": 5.187,
+    "chartStartDelay": 5.187,
+    "audioStartDelay": 0.0,
     "chart": [
         {
             "beat": 5,

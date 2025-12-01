@@ -22,34 +22,21 @@ public class ScoreScreenManager : MonoBehaviour
         {
             if (points > rankPoints[i])
                 continue;
-            else
-            {
-                rankIdx = i;
-                break;
-            }
+
+            rankIdx = i;
+            break;
         }
 
-        switch (rankIdx)
+        rankText.text = rankIdx switch
         {
-            case 0:
-                rankText.text = "D";
-                break;
-            case 1:
-                rankText.text = "C";
-                break;
-            case 2:
-                rankText.text = "B";
-                break;
-            case 3:
-                rankText.text = "A";
-                break;
-            case 4:
-                rankText.text = "S";
-                break;
-            case 5:
-                rankText.text = "SS";
-                break;
-        }
+            0 => "D",
+            1 => "C",
+            2 => "B",
+            3 => "A",
+            4 => "S",
+            5 => "SS",
+            _ => rankText.text
+        };
 
         gameObject.SetActive(true);
     }
