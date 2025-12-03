@@ -1051,10 +1051,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2287754522540165522, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5904099792025955566, guid: 57ec30eaee1960f4da621c7e0082de7a, type: 3}
       propertyPath: m_Name
       value: Main Menu
