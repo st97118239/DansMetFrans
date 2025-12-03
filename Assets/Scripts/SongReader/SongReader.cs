@@ -11,7 +11,7 @@ public static class SongReader
 
     public static int selectedSongIdx = 0;
 
-    private static List<Song> songs = new();
+    private static readonly List<Song> songs = new();
 
     public static async Task GetSongs()
     {
@@ -130,5 +130,11 @@ public static class SongReader
             songs.Add(song);
             Debug.Log("Loaded song " + song.songName);
         }
+    }
+
+    public static void ResetData()
+    {
+        songs.Clear();
+        selectedSongIdx = 0;
     }
 }

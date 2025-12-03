@@ -10,6 +10,7 @@ public class SongSelectManager : MonoBehaviour
     [SerializeField] private Image coverImage;
     [SerializeField] private Image titleImage;
     [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private Image rankImage;
 
     [SerializeField] private int songPlayerSceneIdx;
 
@@ -49,8 +50,13 @@ public class SongSelectManager : MonoBehaviour
 
         string highScore = PlayerPrefs.GetInt("hs" + SongReader.Songs[idx].songName).ToString();
 
-        if (highScore == string.Empty) 
+        if (highScore == string.Empty)
+        {
             highScore = "Not yet played";
+            rankImage.sprite = null;
+        }
+        else
+            rankImage.sprite = Resources.Load<Sprite>("Sprites/Ranks/" + PlayerPrefs.GetString("rank" + SongReader.Songs[SongReader.selectedSongIdx].songName));
 
         highScoreText.text = highScore;
     }

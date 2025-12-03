@@ -11,7 +11,7 @@ public class ScoreScreenManager : MonoBehaviour
 
     [SerializeField] private int mainMenuSceneIdx;
 
-    public void Show(int points, bool newHighScore)
+    public void Show(int points, bool isNewHighScore)
     {
         pointsText.text = points.ToString();
 
@@ -37,6 +37,9 @@ public class ScoreScreenManager : MonoBehaviour
             5 => "SS",
             _ => rankText.text
         };
+
+        if (isNewHighScore) 
+            PlayerPrefs.SetString("rank" + SongReader.Songs[SongReader.selectedSongIdx].songName, rankText.text);
 
         gameObject.SetActive(true);
     }
