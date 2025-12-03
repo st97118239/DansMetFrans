@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -11,7 +12,7 @@ public static class SongReader
 
     public static int selectedSongIdx = 0;
 
-    private static readonly List<Song> songs = new();
+    private static List<Song> songs = new();
 
     public static async Task GetSongs()
     {
@@ -67,6 +68,7 @@ public static class SongReader
             song.bpm = songData.bpm;
             song.chartStartDelay = songData.chartStartDelay;
             song.audioStartDelay = songData.audioStartDelay;
+            song.idx = songData.idx;
             if (songData.chart.Count > 0)
                 song.chart = songData.chart;
             else
@@ -130,6 +132,8 @@ public static class SongReader
             songs.Add(song);
             Debug.Log("Loaded song " + song.songName);
         }
+
+        songs = new List<Song>(songs.OrderBy(song => song.idx));
     }
 
     public static void ResetData()

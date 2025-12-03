@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SongManager : MonoBehaviour
@@ -25,6 +26,8 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Transform camTrans;
     [SerializeField] private Transform[] objectsTrans;
 
+    [SerializeField] private TMP_Text pointText;
+
     [SerializeField] private float maxHitDistance;
 
     private float beatStep;
@@ -33,7 +36,7 @@ public class SongManager : MonoBehaviour
     private int beatLoopIdx;
     [SerializeField] private int previewBeats;
 
-    private int score;
+    public int score;
 
     private List<ChartData> chart;
     private readonly List<int> beats = new();
@@ -187,6 +190,8 @@ public class SongManager : MonoBehaviour
             float rHandPoints = (1 - rHandDist) * 100;
             AddPoints(Mathf.RoundToInt(rHandPoints));
         }
+
+        pointText.text = score.ToString();
     }
 
     private void AddPoints(int pointAmt)

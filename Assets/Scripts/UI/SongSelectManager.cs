@@ -50,13 +50,16 @@ public class SongSelectManager : MonoBehaviour
 
         string highScore = PlayerPrefs.GetInt("hs" + SongReader.Songs[idx].songName).ToString();
 
-        if (highScore == string.Empty)
+        if (highScore == "0")
         {
             highScore = "Not yet played";
-            rankImage.sprite = null;
+            rankImage.color = Color.clear;
         }
         else
+        {
             rankImage.sprite = Resources.Load<Sprite>("Sprites/Ranks/" + PlayerPrefs.GetString("rank" + SongReader.Songs[SongReader.selectedSongIdx].songName));
+            rankImage.color = Color.white;
+        }
 
         highScoreText.text = highScore;
     }

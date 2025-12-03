@@ -1,11 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreScreenManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text pointsText;
-    [SerializeField] private TMP_Text rankText;
+    [SerializeField] private Image rankImage;
 
     [SerializeField] private int[] rankPoints;
 
@@ -23,23 +24,25 @@ public class ScoreScreenManager : MonoBehaviour
             if (points > rankPoints[i])
                 continue;
 
-            rankIdx = i;
+            rankIdx = i - 1;
             break;
         }
 
-        rankText.text = rankIdx switch
+        string rank = rankIdx switch
         {
-            0 => "D",
+            -1 or 0 => "D",
             1 => "C",
             2 => "B",
             3 => "A",
             4 => "S",
             5 => "SS",
-            _ => rankText.text
+            _ => string.Empty
         };
 
         if (isNewHighScore) 
-            PlayerPrefs.SetString("rank" + SongReader.Songs[SongReader.selectedSongIdx].songName, rankText.text);
+            PlayerPrefs.SetString("rank" + SongReader.Songs[SongReader.selectedSongIdx].songName, rank);
+
+        rankImage.sprite = Resources.Load<Sprite>("Sprites/Ranks/" + rank);
 
         gameObject.SetActive(true);
     }

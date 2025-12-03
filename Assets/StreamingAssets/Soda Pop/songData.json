@@ -1,5 +1,6 @@
 {
     "songName": "Soda Pop",
+    "idx": 0,  
     "bpm": 70,
     "chartStartDelay": 0.0,
     "audioStartDelay": 0.0,

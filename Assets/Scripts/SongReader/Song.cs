@@ -5,6 +5,7 @@ using UnityEngine;
 public class Song
 {
     public string songName;
+    public int idx;
     public Sprite coverArt;
     public Sprite titleArt;
     public AudioClip audio;
