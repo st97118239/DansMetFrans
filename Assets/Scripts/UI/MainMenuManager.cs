@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private SongSelectManager songSelectManager;
     [SerializeField] private SettingsMenuManager settingsMenuManager;
+
+    private void Awake()
+    {
+        Settings.LoadVolume();
+    }
 
     public void Show()
     {

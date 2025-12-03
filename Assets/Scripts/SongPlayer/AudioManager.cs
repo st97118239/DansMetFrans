@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
     public void Load()
     {
+        musicPlayer.volume = Settings.musicVolume;
+
         musicPlayer.clip = SongReader.Songs[SongReader.selectedSongIdx].audio;
 
         StartCoroutine(Play());
