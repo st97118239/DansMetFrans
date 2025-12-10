@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class SongManager : MonoBehaviour
 {
+    [SerializeField] private PauseScreenManager pauseScreenManager;
     [SerializeField] private ScoreScreenManager scoreScreenManager;
+    [SerializeField] private SettingsMenuManager settingsMenuManager;
     [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private Transform headHitCollider;
@@ -25,6 +27,8 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Transform xrOriginTrans;
     [SerializeField] private Transform camTrans;
     [SerializeField] private Transform[] objectsTrans;
+    private Vector3[] defaultObjectsPos;
+    private Vector3 defaultCamPos;
 
     [SerializeField] private TMP_Text pointText;
 
@@ -42,26 +46,49 @@ public class SongManager : MonoBehaviour
     private readonly List<int> beats = new();
 
     private bool hasPreview;
+    public bool hasFinished;
 
     private Coroutine resetCollidersCoroutine;
 
-    private void Awake()
-    {
-        if (Settings.height == 0)
-            Settings.SetHeight(camTrans.localPosition.y + 1);
-
-        camTrans.localPosition = new Vector3(0, Settings.height + Settings.heightDiff, 0);
-
-        foreach (Transform trans in objectsTrans)
-            trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + Settings.heightDiff, trans.localPosition.z);
-    }
+    //private void Awake()
+    //{
+        
+    //}
 
     private void Start()
     {
+        headCollider = GameObject.Find("Main Camera").transform;
+        leftHandCollider = GameObject.Find("Left Hand Controller").transform;
+        rightHandCollider = GameObject.Find("Right Hand Controller").transform;
+
+        handIndicators = new[] { GameObject.Find("Right Ray Interactor"), GameObject.Find("Left Ray Interactor"), };
+
+        foreach (GameObject indicator in handIndicators)
+            indicator.SetActive(false);
+
+        leftHandCollider.GetComponent<MeshRenderer>().enabled = true;
+        rightHandCollider.GetComponent<MeshRenderer>().enabled = true;
+
+        xrOriginTrans = GameObject.Find("XR Origin (VR)").transform;
+        camTrans = GameObject.Find("Camera Offset").transform;
+
+        pointText = GameObject.Find("PointText").GetComponent<TMP_Text>();
+
+        settingsMenuManager.Load();
+
+        defaultCamPos = camTrans.localPosition;
+
+        defaultObjectsPos = new Vector3[objectsTrans.Length];
+
+        for (int i = 0; i < objectsTrans.Length; i++)
+            defaultObjectsPos[i] = objectsTrans[i].localPosition;
+
+        //ReloadHeight();
+
         ReloadSongs();
     }
 
-    public async void ReloadSongs()
+    private async void ReloadSongs()
     {
         if (SongReader.Songs.Count == 0)
             await SongReader.GetSongs();
@@ -109,17 +136,9 @@ public class SongManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
             yield return wait1Beat;
 
-        Debug.Log("Finished song.");
+        hasFinished = true;
 
-        bool isNewHighScore = false;
-
-        if (score > PlayerPrefs.GetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName))
-        {
-            isNewHighScore = true;
-            PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
-        }
-
-        OpenScoreScreen(isNewHighScore);
+        OpenScoreScreen();
     }
 
     private void SetColliders()
@@ -199,13 +218,50 @@ public class SongManager : MonoBehaviour
         score += pointAmt;
     }
 
-    public void OpenScoreScreen(bool isNewHighScore)
+    public void OpenScoreScreen()
     {
+        bool isNewHighScore = false;
+
+        if (score > PlayerPrefs.GetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName))
+        {
+            isNewHighScore = true;
+            PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
+        }
+
         scoreScreenManager.Show(score, isNewHighScore);
 
+        ShowIndicators(true);
+    }
+
+    public void ShowIndicators(bool state)
+    {
         foreach (GameObject obj in handIndicators)
         {
-            obj.SetActive(true);
+            obj.SetActive(state);
         }
+    }
+
+    private void OnPause()
+    {
+        if (!hasFinished)
+            pauseScreenManager.OnPause();
+    }
+
+    public void ReloadHeight()
+    {
+        if (Settings.height == 0)
+            Settings.SetHeight(camTrans.localPosition.y + 1);
+
+        camTrans.localPosition = new Vector3(0, Settings.height, 0);
+
+        for (int i = 0; i < objectsTrans.Length; i++)
+        {
+            Transform obj = objectsTrans[i];
+            Vector3 defPos = defaultObjectsPos[i];
+            obj.localPosition = new Vector3(defPos.x, defPos.y + Settings.heightDiff, defPos.z);
+        }
+
+        //foreach (Transform trans in objectsTrans)
+        //    trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + Settings.heightDiff, trans.localPosition.z);
     }
 }

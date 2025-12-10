@@ -12,6 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SongPlayerTest.unity
     guid: e530e89a3a487cb4cad1f3ae5965b661
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6a2d7f8f434a1c8468dc0007ff2fe37d, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c16c5c32d6e48cb47a3620f018fe4777, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ac0d02e55e5cbf4459f3fa574d2fc06e, type: 2}

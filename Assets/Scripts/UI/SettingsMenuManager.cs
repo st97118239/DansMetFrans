@@ -5,14 +5,27 @@ using UnityEngine.UI;
 public class SettingsMenuManager : MonoBehaviour
 {
     [SerializeField] private MainMenuManager mainMenuManager;
+    [SerializeField] private PauseScreenManager pauseScreenManager;
+    [SerializeField] private SongManager songManager;
     [SerializeField] private Transform camTrans;
 
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
 
-    private void Awake()
+    public void Load()
     {
-        CalcHeight();
+        camTrans = GameObject.Find("Camera Offset").transform;
+        if (mainMenuManager != null)
+        {
+            //camTrans.localPosition += Vector3.up; 
+            CalcHeight();
+        }
+        else
+        {
+            Debug.Log(Settings.height);
+            //camTrans.localPosition = new Vector3(camTrans.localPosition.z, Settings.height, camTrans.localPosition.z);
+        }
+
         Settings.LoadVolume();
         musicSlider.value = Settings.musicVolume;
         sfxSlider.value = Settings.sfxVolume;
@@ -23,17 +36,29 @@ public class SettingsMenuManager : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    public void BackButton()
+    public void MainMenuBackButton()
     {
         gameObject.SetActive(false);
         Settings.SaveVolume();
         mainMenuManager.Show();
     }
 
+    public void SongPlayerBackButton()
+    {
+        Settings.SaveVolume();
+        pauseScreenManager.OnSettings();
+        gameObject.SetActive(false);
+    }
+
     public void CalcHeight()
     {
-        Settings.SetHeight(camTrans.localPosition.y + 1);
-        Debug.Log(Settings.height);
+        Settings.SetHeight(camTrans.localPosition.y);
+    }
+
+    public void ResetHeight()
+    {
+        CalcHeight();
+        songManager.ReloadHeight();
     }
 
     public void UpdateMusicVolume()

@@ -13,6 +13,7 @@ public static class Settings
     {
         height = givenHeight;
         heightDiff = defaultHeight - height;
+        Debug.Log(height + ", " + heightDiff);
     }
 
     public static void LoadVolume()
