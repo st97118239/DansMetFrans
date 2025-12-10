@@ -77,6 +77,18 @@ public static class SongReader
                 continue;
             }
 
+            if (songData.lights != null && songData.lights.Length > 0)
+            {
+                song.lights = songData.lights;
+
+                foreach (DataLight dataLight in song.lights)
+                {
+                    if (dataLight.lightData[0].beat != -1)
+                        Debug.LogWarning("First beat of a light in the song " + song.songName + " is not on beat -1, this will cause the light to already have the light data from the first beat it should be active.");
+                }
+            }
+            else
+                Debug.LogWarning("No lights found in song " + song.songName);
             // cover art handler
             songPath = path + songListPath + "/cover.png";
             Sprite sprite = null;

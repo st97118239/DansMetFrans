@@ -1232,9 +1232,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChartMakerData
   songData:
     songName: 
+    idx: 0
     bpm: 0
-    startDelay: 0
+    chartStartDelay: 0
+    audioStartDelay: 0
     chart: []
+    lights:
+    - lightData:
+      - beat: -1
+        position:
+        - 1
+        - 2
+        - 3
+        rotation:
+        - 3
+        - 2
+        - 1
+        color:
+        - 103
+        - 22
+        - 140
+        intensity: 8.5
+      - beat: 1
+        position:
+        - 1
+        - 2
+        - 3
+        rotation:
+        - 3
+        - 2
+        - 1
+        color:
+        - 103
+        - 22
+        - 140
+        intensity: 8.5
+      songLightData: []
 --- !u!4 &1616914484
 Transform:
   m_ObjectHideFlags: 0

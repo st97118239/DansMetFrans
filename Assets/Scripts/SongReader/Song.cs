@@ -13,4 +13,5 @@ public class Song
     public float chartStartDelay;
     public float audioStartDelay;
     public List<ChartData> chart;
+    public DataLight[] lights;
 }

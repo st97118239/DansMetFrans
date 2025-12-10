@@ -7,23 +7,101 @@
     "chart": [
         {
             "beat": 5,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-0.961, 1.55, 0.098],
-            "rightHandPos": [0.955, 0.652, 0.098]
+            "headPos": [
+                0,
+                1.79,
+                0
+            ],
+            "leftHandPos": [
+                -0.961,
+                1.55,
+                0.098
+            ],
+            "rightHandPos": [
+                0.955,
+                0.652,
+                0.098
+            ]
         },
         {
             "beat": 9,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.837],
-            "rightHandPos": [0.313, 1.118, 0.837]
+            "headPos": [
+                0.1,
+                1.8,
+                0
+            ],
+            "leftHandPos": [
+                -0.313,
+                1.118,
+                0.837
+            ],
+            "rightHandPos": [
+                0.313,
+                1.118,
+                0.837
+            ]
         },
         {
             "beat": 17,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.837],
-            "rightHandPos": [0.313, 1.5, 0.837]
+            "headPos": [
+                0,
+                1.8,
+                0.1
+            ],
+            "leftHandPos": [
+                -0.313,
+                1.5,
+                0.837
+            ],
+            "rightHandPos": [
+                0.313,
+                1.5,
+                0.837
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "lightData": [
+                {
+                    "beat": -1,
+                    "position": [
+                        1.0,
+                        2.0,
+                        3.0
+                    ],
+                    "rotation": [
+                        3.0,
+                        2.0,
+                        1.0
+                    ],
+                    "color": [
+                        103.0,
+                        22.0,
+                        140.0
+                    ],
+                    "intensity": 8.5
+                },
+                {
+                    "beat": 1,
+                    "position": [
+                        1.0,
+                        2.0,
+                        3.0
+                    ],
+                    "rotation": [
+                        3.0,
+                        2.0,
+                        1.0
+                    ],
+                    "color": [
+                        103.0,
+                        22.0,
+                        140.0
+                    ],
+                    "intensity": 8.5
+                }
+            ]
         }
     ]
 }
-
- 
