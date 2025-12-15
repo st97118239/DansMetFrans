@@ -6,6 +6,7 @@ public class Song
 {
     public string songName;
     public int idx;
+    public int performerIdx;
     public Sprite coverArt;
     public Sprite titleArt;
     public AudioClip audio;
@@ -14,4 +15,5 @@ public class Song
     public float audioStartDelay;
     public List<ChartData> chart;
     public DataLight[] lights;
+    public PopupData[] popups;
 }

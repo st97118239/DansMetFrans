@@ -8,6 +8,7 @@ public class SongManager : MonoBehaviour
     [SerializeField] private PauseScreenManager pauseScreenManager;
     [SerializeField] private ScoreScreenManager scoreScreenManager;
     [SerializeField] private SettingsMenuManager settingsMenuManager;
+    [SerializeField] private LightManager lightManager;
     [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private Transform headHitCollider;
@@ -24,36 +25,37 @@ public class SongManager : MonoBehaviour
 
     [SerializeField] private GameObject[] handIndicators;
 
-    [SerializeField] private Transform xrOriginTrans;
     [SerializeField] private Transform camTrans;
     [SerializeField] private Transform[] objectsTrans;
     private Vector3[] defaultObjectsPos;
-    private Vector3 defaultCamPos;
 
     [SerializeField] private TMP_Text pointText;
 
     [SerializeField] private float maxHitDistance;
 
+    [SerializeField] private GameObject[] performerPrefabs;
+    [SerializeField] private Transform performerPos;
+    private GameObject performer;
+    private Animator performerAnimator;
+
     private float beatStep;
     [SerializeField] private float hitTime;
     private int beat;
+    private int popupBeat;
     private int beatLoopIdx;
     [SerializeField] private int previewBeats;
 
     public int score;
 
     private List<ChartData> chart;
+    private PopupData[] popupChart;
     private readonly List<int> beats = new();
+    private readonly List<int> popupBeats = new();
 
     private bool hasPreview;
     public bool hasFinished;
 
     private Coroutine resetCollidersCoroutine;
-
-    //private void Awake()
-    //{
-        
-    //}
 
     private void Start()
     {
@@ -69,21 +71,16 @@ public class SongManager : MonoBehaviour
         leftHandCollider.GetComponent<MeshRenderer>().enabled = true;
         rightHandCollider.GetComponent<MeshRenderer>().enabled = true;
 
-        xrOriginTrans = GameObject.Find("XR Origin (VR)").transform;
         camTrans = GameObject.Find("Camera Offset").transform;
 
         pointText = GameObject.Find("PointText").GetComponent<TMP_Text>();
 
         settingsMenuManager.Load();
 
-        defaultCamPos = camTrans.localPosition;
-
         defaultObjectsPos = new Vector3[objectsTrans.Length];
 
         for (int i = 0; i < objectsTrans.Length; i++)
             defaultObjectsPos[i] = objectsTrans[i].localPosition;
-
-        //ReloadHeight();
 
         ReloadSongs();
     }
@@ -91,13 +88,34 @@ public class SongManager : MonoBehaviour
     private async void ReloadSongs()
     {
         if (SongReader.Songs.Count == 0)
+        {
             await SongReader.GetSongs();
+        }
 
+        lightManager.LoadLights();
+        LoadPerformer();
+        LoadPopups();
         StartSong();
+    }
+
+    private void LoadPerformer()
+    {
+        performer = Instantiate(performerPrefabs[SongReader.Songs[SongReader.selectedSongIdx].performerIdx], performerPos.position, performerPos.rotation);
+        performerAnimator = performer.GetComponent<Animator>();
+        performer.SetActive(false);
+    }
+
+    private void LoadPopups()
+    {
+        popupChart = SongReader.Songs[SongReader.selectedSongIdx].popups;
+
+        foreach (PopupData popup in popupChart)
+            popupBeats.Add(popup.beat);
     }
 
     private void StartSong()
     {
+        performer.SetActive(true);
         chart = SongReader.Songs[SongReader.selectedSongIdx].chart;
 
         foreach (ChartData chartBeat in chart) 
@@ -115,6 +133,8 @@ public class SongManager : MonoBehaviour
 
         WaitForSeconds wait1Beat = new(beatStep);
 
+        performerAnimator.SetTrigger("StartDance");
+
         for (beatLoopIdx = 0; beatLoopIdx < beats[^1]; beatLoopIdx++)
         {
             if (beats[beat] == beatLoopIdx + 1)
@@ -128,6 +148,12 @@ public class SongManager : MonoBehaviour
                 float beatsTillHit = beatLoopIdx + 1 + previewBeats - beats[beat];
                 if (beats.Count >= beat + 1 && beatsTillHit <= previewBeats && beatsTillHit > 0)
                     SetPreview();
+            }
+
+            if (popupBeats.Count > popupBeat && popupBeats[popupBeat] == beatLoopIdx + 1)
+            {
+                Debug.Log("Show popup");
+                popupBeat++;
             }
 
             yield return wait1Beat;

@@ -1,7 +1,8 @@
 {
     "songName": "Soda Pop",
-    "idx": 0,  
-    "bpm": 70,
+    "idx": 0,
+    "performerIdx": 0,
+    "bpm": 97,
     "chartStartDelay": 0.0,
     "audioStartDelay": 0.0,
     "chart": [
@@ -16,6 +17,42 @@
             "headPos": [0.1, 1.6, 0],
             "leftHandPos": [1.5, 1.3, 0],
             "rightHandPos": [0, 1, 0.7]
+        }
+    ],
+    "lights": [
+        {
+            "lightData": [
+                {
+                    "beat": -1,
+                    "position": [-1.8, 4.35, 7.54],
+                    "rotation": [51.6950378, 157.035324, 356.039276],
+                    "color": [1, 0.972549, 0.3496351],
+                    "intensity": 8.5
+                },
+                {
+                    "beat": 1,
+                    "position": [1.0, 2.0, 3.0],
+                    "rotation": [3.0, 2.0, 1.0],
+                    "color": [1, 1, 1],
+                    "intensity": 400
+                }
+            ]
+        }
+    ],
+    "popups": [
+        {
+            "beat": 4,
+            "idx": 0,
+            "pos": [1,1,0],
+            "rot": [0,0,0],
+            "scale": [1,1,1]
+        },
+        {
+            "beat": 8,
+            "idx": 1,
+            "pos": [5,-1,0],
+            "rot": [90,0,0],
+            "scale": [1,0.75,1]
         }
     ]
 }

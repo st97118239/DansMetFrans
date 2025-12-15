@@ -69,6 +69,7 @@ public static class SongReader
             song.chartStartDelay = songData.chartStartDelay;
             song.audioStartDelay = songData.audioStartDelay;
             song.idx = songData.idx;
+            song.performerIdx = songData.performerIdx;
             if (songData.chart.Count > 0)
                 song.chart = songData.chart;
             else
@@ -86,11 +87,49 @@ public static class SongReader
                     if (dataLight.lightData[0].beat != -1)
                         Debug.LogWarning("First beat of a light in the song " + song.songName + " is not on beat -1, this will cause the light to already have the light data from the first beat it should be active.");
                 }
+
+                var songLightData = song.lights;
+
+                DataLight[] lightData = new DataLight[songLightData.Length];
+
+                for (int i = 0; i < lightData.Length; i++)
+                {
+                    lightData[i] = new DataLight
+                    {
+                        songLightData = new SongLights[songLightData[i].lightData.Length]
+                    };
+                    Debug.Log("a");
+                }
+
+                for (int i = 0; i < songLightData.Length; i++)
+                {
+                    for (int j = 0; j < songLightData[i].lightData.Length; j++)
+                    {
+                        DataLight data = songLightData[i];
+
+                        lightData[i].songLightData[j] = new SongLights
+                        {
+                            beat = data.lightData[j].beat,
+                            position = data.lightData[j].pos,
+                            rotation = data.lightData[j].rot,
+                            intensity = data.lightData[j].intensity,
+                            color = new(data.lightData[j].color[0], data.lightData[j].color[1], data.lightData[j].color[2])
+                        };
+                    }
+                }
+
+                song.lights = lightData;
             }
             else
                 Debug.LogWarning("No lights found in song " + song.songName);
+
+            if (songData.popups != null && songData.popups.Length > 0)
+                song.popups = songData.popups;
+            else
+                Debug.LogWarning("No popups found in song " + song.songName);
+
             // cover art handler
-            songPath = path + songListPath + "/cover.png";
+                songPath = path + songListPath + "/cover.png";
             Sprite sprite = null;
 
             using UnityWebRequest coverUwr = UnityWebRequestTexture.GetTexture(songPath);
