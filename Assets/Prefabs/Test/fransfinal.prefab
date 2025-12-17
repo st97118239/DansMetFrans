@@ -52,6 +52,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: fransfinal
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb1f5b720182ad7439e4a25592946b33, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9d1b945fe0a8c7548997a797695543cd, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c1b0849b9f55fb41bcaaedd03549bed, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e366c2b043a86f4692c60e5422a1a5f, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 73e8769249f6b4b478de51e518333dd6, type: 2}
+    - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e366c2b043a86f4692c60e5422a1a5f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
