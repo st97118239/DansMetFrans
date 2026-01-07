@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator Play()
     {
-        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].chartStartDelay);
+        yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].audioStartDelay);
 
         musicPlayer.Play();
     }

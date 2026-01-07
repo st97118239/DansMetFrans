@@ -42,7 +42,7 @@ public class SongManager : MonoBehaviour
     [SerializeField] private float hitTime;
     private int beat;
     private int popupBeat;
-    private int beatLoopIdx;
+    [SerializeField] private int beatLoopIdx;
     [SerializeField] private int previewBeats;
 
     public int score;

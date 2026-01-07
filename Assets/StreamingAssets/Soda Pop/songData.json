@@ -2,21 +2,219 @@
     "songName": "Soda Pop",
     "idx": 0,
     "performerIdx": 0,
-    "bpm": 97,
-    "chartStartDelay": 0.0,
+    "bpm": 388,
+    "chartStartDelay": 3,
     "audioStartDelay": 0.0,
     "chart": [
         {
-            "beat": 5,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-1.25, 1.75, 0.1],
-            "rightHandPos": [1.06, 0.65, 0.1]
+            "beat": 1,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.097, 0.8349, 0.208],
+            "rightHandPos": [0.097, 0.8349, 0.208]
         },
         {
-            "beat": 9,
-            "headPos": [0.1, 1.6, 0],
-            "leftHandPos": [1.5, 1.3, 0],
-            "rightHandPos": [0, 1, 0.7]
+            "beat": 6,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.22, 0.71, -0.032],
+            "rightHandPos": [0.061, 1.951, 0.307]
+        },
+        {
+            "beat": 11,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [0.299, 1.3735, 0.283],
+            "rightHandPos": [0.232, 1.475, 0.404]
+        },
+        {
+            "beat": 12,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.127, 1.3735, 0.283],
+            "rightHandPos": [-0.348, 1.375, 0.404]
+        },
+        {
+            "beat": 15,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.097, 0.8349, 0.208],
+            "rightHandPos": [0.097, 0.8349, 0.208]
+        },
+        {
+            "beat": 16,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [0.037, 2.065, 0.106],
+            "rightHandPos": [0.231, 2.065, 0.115]
+        },
+        {
+            "beat": 17,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.127, 1.405, 0.463],
+            "rightHandPos": [0.151, 1.402, 0.447]
+        },
+        {
+            "beat": 18,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [0.037, 2.065, 0.106],
+            "rightHandPos": [0.231, 2.065, 0.115]
+        },
+        {
+            "beat": 22,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.23, 0.876, 0.308],
+            "rightHandPos": [0.123, 0.8728, 0.311]
+        },
+        {
+            "beat": 24,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [0.014, 2.043, 0.254],
+            "rightHandPos": [0.255, 1.986, 0.185]
+        },
+        {
+            "beat": 27,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.097, 0.8349, 0.208],
+            "rightHandPos": [0.097, 0.8349, 0.208]
+        },
+        {
+            "beat": 42,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.389, 0.708, 0.029],
+            "rightHandPos": [0.3441, 1.556, 0.344]
+        },
+        {
+            "beat": 43,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [0.16, 1.077, 0.398],
+            "rightHandPos": [-0.0399, 1.0765, 0.389]
+        },
+        {
+            "beat": 44,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.389, 0.708, 0.029],
+            "rightHandPos": [0.3441, 1.27, 0.559]
+        },
+        {
+            "beat": 46,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [0.389, 0.708, 0.029],
+            "rightHandPos": [-0.3441, 1.27, 0.559]
+        },
+        {
+            "beat": 48,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.389, 0.708, 0.029],
+            "rightHandPos": [0.3441, 1.27, 0.559]
+        },
+        {
+            "beat": 50,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.382, 1.993, 0.398],
+            "rightHandPos": [0.285, 0.751, 0.422]
+        },
+        {
+            "beat": 52,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.382, 0.774, 0.372],
+            "rightHandPos": [-0.199, 1.44, 0.422]
+        },
+        {
+            "beat": 58,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.453, 0.774, -0.044],
+            "rightHandPos": [-0.401, 1.788, 0.206]
+        },
+        {
+            "beat": 60,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.428, 0.774, -0.046],
+            "rightHandPos": [0.614, 1.667, 0.08]
+        },
+        {
+            "beat": 64,
+            "headPos": [0.157, 1.754, 0],
+            "leftHandPos": [-0.827, 1.607, 0.054],
+            "rightHandPos": [0.373, 0.795, -0.054]
+        },
+        {
+            "beat": 69,
+            "headPos": [-0.062, 1.75, 0],
+            "leftHandPos": [0.446, 1.481, 0.447],
+            "rightHandPos": [0.34, 0.795, -0.232]
+        },
+        {
+            "beat": 72,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.41, 0.762, -0.15],
+            "rightHandPos": [-0.474, 1.478, 0.43]
+        },
+        {
+            "beat": 76,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.574, 1.925, 0.001],
+            "rightHandPos": [0.535, 1.933, -0.003]
+        },
+        {
+            "beat": 77,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.951, 1.466, -0.038],
+            "rightHandPos": [0.847, 1.447, -0.003]
+        },
+        {
+            "beat": 79,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.097, 0.8349, 0.208],
+            "rightHandPos": [0.097, 0.8349, 0.208]
+        },
+        {
+            "beat": 88,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.429, 0.783, 0.131],
+            "rightHandPos": [0.355, 1.481, 0.159]
+        },
+        {
+            "beat": 89,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.227, 1.503, 0.415],
+            "rightHandPos": [0.06, 0.759, 0.429]
+        },
+        {
+            "beat": 91,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.22, 0.779, 0.415],
+            "rightHandPos": [0.241, 1.354, 0.429]
+        },
+        {
+            "beat": 93,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.105, 1.358, 0.415],
+            "rightHandPos": [0.362, 0.695, 0.04]
+        },
+        {
+            "beat": 94,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.358, 0.782, 0.237],
+            "rightHandPos": [0.236, 1.428, 0.469]
+        },
+        {
+            "beat": 96,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.407, 2.063, 0.237],
+            "rightHandPos": [0.306, 0.752, 0.119]
+        },
+        {
+            "beat": 97,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.407, 0.812, 0.237],
+            "rightHandPos": [0.335, 1.948, 0.171]
+        },
+        {
+            "beat": 99,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.434, 0.812, 0.068],
+            "rightHandPos": [0.159, 1.486, 0.481]
+        },
+        {
+            "beat": 100,
+            "headPos": [0, 1.75, -0.5],
+            "leftHandPos": [-0.434, 0.812, 0.068],
+            "rightHandPos": [0.159, 1.622, 0.427]
         }
     ],
     "lights": [
