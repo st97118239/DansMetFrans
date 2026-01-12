@@ -1,6 +1,7 @@
 {
     "songName": "Macarena",
-    "idx": 1,
+    "idx": 2,
+    "performerIdx": 2,
     "bpm": 150,
     "chartStartDelay": 5.187,
     "audioStartDelay": 0.0,

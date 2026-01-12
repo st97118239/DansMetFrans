@@ -98,7 +98,6 @@ public static class SongReader
                     {
                         songLightData = new SongLights[songLightData[i].lightData.Length]
                     };
-                    Debug.Log("a");
                 }
 
                 for (int i = 0; i < songLightData.Length; i++)

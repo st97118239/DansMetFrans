@@ -26,4 +26,16 @@ public static class VectorExtensions
         Debug.LogError("Invalid vector found.");
         return Vector3.zero;
     }
+
+    public static Vector2 ToVector2(this float[] floatValues)
+    {
+        if (floatValues != null)
+        {
+            if (floatValues.Length == 2)
+                return new Vector2(floatValues[0], floatValues[1]);
+        }
+
+        Debug.LogError("Invalid vector found.");
+        return Vector2.zero;
+    }
 }

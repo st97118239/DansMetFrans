@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SongManager : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Transform[] objectsTrans;
     private Vector3[] defaultObjectsPos;
 
+    [SerializeField] private Popup[] popups;
+    public Sprite[] popupSprites;
     [SerializeField] private TMP_Text pointText;
 
     [SerializeField] private float maxHitDistance;
@@ -100,7 +103,8 @@ public class SongManager : MonoBehaviour
 
     private void LoadPerformer()
     {
-        performer = Instantiate(performerPrefabs[SongReader.Songs[SongReader.selectedSongIdx].performerIdx], performerPos.position, performerPos.rotation);
+        performer = Instantiate(performerPrefabs[SongReader.Songs[SongReader.selectedSongIdx].performerIdx],
+            performerPos.position, performerPos.rotation);
         performerAnimator = performer.GetComponent<Animator>();
         performer.SetActive(false);
     }
@@ -118,7 +122,7 @@ public class SongManager : MonoBehaviour
         performer.SetActive(true);
         chart = SongReader.Songs[SongReader.selectedSongIdx].chart;
 
-        foreach (ChartData chartBeat in chart) 
+        foreach (ChartData chartBeat in chart)
             beats.Add(chartBeat.beat);
 
         beatStep = 60 / SongReader.Songs[SongReader.selectedSongIdx].bpm;
@@ -152,7 +156,7 @@ public class SongManager : MonoBehaviour
 
             if (popupBeats.Count > popupBeat && popupBeats[popupBeat] == beatLoopIdx + 1)
             {
-                Debug.Log("Show popup");
+                popups[popupChart[popupBeat].idx].Load(popupChart[popupBeat]);
                 popupBeat++;
             }
 
@@ -190,7 +194,7 @@ public class SongManager : MonoBehaviour
         hasPreview = true;
         headPrev.transform.position = chart[beat].headPosV;
         leftHandPrev.transform.position = chart[beat].leftHandPosV;
-        rightHandPrev.transform.position = chart[beat].rightHandPosV; 
+        rightHandPrev.transform.position = chart[beat].rightHandPosV;
     }
 
     private IEnumerator ResetColliders()
