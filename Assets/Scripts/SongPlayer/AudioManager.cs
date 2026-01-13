@@ -1,14 +1,29 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public AudioSource musicPlayer;
+    public AudioSource sfxPlayer;
+
+    [SerializeField] private AudioClip sfxSound;
+
+    private void Start()
+    {
+        UpdateVolume();
+    }
+
+    public void UpdateVolume()
+    {
+        if (sfxPlayer)
+            sfxPlayer.volume = Settings.sfxVolume;
+        if (musicPlayer)
+            musicPlayer.volume = Settings.musicVolume;
+    }
 
     public void Load()
     {
-        musicPlayer.volume = Settings.musicVolume;
-
         musicPlayer.clip = SongReader.Songs[SongReader.selectedSongIdx].audio;
 
         StartCoroutine(Play());
@@ -19,5 +34,10 @@ public class AudioManager : MonoBehaviour
         yield return new WaitForSeconds(SongReader.Songs[SongReader.selectedSongIdx].audioStartDelay);
 
         musicPlayer.Play();
+    }
+
+    public void PlaySFXSound()
+    {
+        sfxPlayer.PlayOneShot(sfxSound);
     }
 }

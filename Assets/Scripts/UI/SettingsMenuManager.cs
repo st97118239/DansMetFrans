@@ -65,8 +65,6 @@ public class SettingsMenuManager : MonoBehaviour
     public void UpdateMusicVolume()
     {
         Settings.musicVolume = musicSlider.value;
-        if (audioManager)
-            audioManager.musicPlayer.volume = musicSlider.value;
     }
 
     public void UpdateSfxVolume()
