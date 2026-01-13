@@ -6257,6 +6257,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 140887599}
     - target: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1846841550}
+    - target: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: pauseScreenManager
       value: 
       objectReference: {fileID: 575926492}
