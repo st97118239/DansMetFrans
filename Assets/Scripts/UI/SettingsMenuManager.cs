@@ -7,6 +7,7 @@ public class SettingsMenuManager : MonoBehaviour
     [SerializeField] private MainMenuManager mainMenuManager;
     [SerializeField] private PauseScreenManager pauseScreenManager;
     [SerializeField] private SongManager songManager;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Transform camTrans;
 
     [SerializeField] private Slider musicSlider;
@@ -64,6 +65,8 @@ public class SettingsMenuManager : MonoBehaviour
     public void UpdateMusicVolume()
     {
         Settings.musicVolume = musicSlider.value;
+        if (audioManager)
+            audioManager.musicPlayer.volume = musicSlider.value;
     }
 
     public void UpdateSfxVolume()
