@@ -113,8 +113,8 @@ public class SongManager : MonoBehaviour
     {
         popupChart = SongReader.Songs[SongReader.selectedSongIdx].popups;
 
-        foreach (PopupData popup in popupChart)
-            popupBeats.Add(popup.beat);
+        foreach (PopupData popup in popupChart) 
+            popups[popup.idx].Load(popup);
     }
 
     private void StartSong()
@@ -154,11 +154,11 @@ public class SongManager : MonoBehaviour
                     SetPreview();
             }
 
-            if (popupBeats.Count > popupBeat && popupBeats[popupBeat] == beatLoopIdx + 1)
-            {
-                popups[popupChart[popupBeat].idx].Load(popupChart[popupBeat]);
-                popupBeat++;
-            }
+            //if (popupBeats.Count > popupBeat && popupBeats[popupBeat] == beatLoopIdx + 1)
+            //{
+            //    popups[popupChart[popupBeat].idx].Load(popupChart[popupBeat]);
+            //    popupBeat++;
+            //}
 
             yield return wait1Beat;
         }
