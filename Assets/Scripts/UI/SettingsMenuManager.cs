@@ -12,6 +12,7 @@ public class SettingsMenuManager : MonoBehaviour
 
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Toggle showPrevsToggle;
 
     public void Load()
     {
@@ -27,9 +28,10 @@ public class SettingsMenuManager : MonoBehaviour
             //camTrans.localPosition = new Vector3(camTrans.localPosition.z, Settings.height, camTrans.localPosition.z);
         }
 
-        Settings.LoadVolume();
+        Settings.LoadSettings();
         musicSlider.value = Settings.musicVolume;
         sfxSlider.value = Settings.sfxVolume;
+        showPrevsToggle.isOn = Settings.showPreviews;
     }
 
     public void Show()
@@ -40,13 +42,13 @@ public class SettingsMenuManager : MonoBehaviour
     public void MainMenuBackButton()
     {
         gameObject.SetActive(false);
-        Settings.SaveVolume();
+        Settings.SaveSettings();
         mainMenuManager.Show();
     }
 
     public void SongPlayerBackButton()
     {
-        Settings.SaveVolume();
+        Settings.SaveSettings();
         pauseScreenManager.OnSettings();
         gameObject.SetActive(false);
     }
@@ -60,6 +62,11 @@ public class SettingsMenuManager : MonoBehaviour
     {
         CalcHeight();
         songManager.ReloadHeight();
+    }
+
+    public void UpdateShowPrevs()
+    {
+        Settings.showPreviews = showPrevsToggle.isOn;
     }
 
     public void UpdateMusicVolume()

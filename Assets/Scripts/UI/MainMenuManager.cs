@@ -16,7 +16,7 @@ public class MainMenuManager : MonoBehaviour
         GameObject.Find("Left Ray Interactor").SetActive(true);
 
         settingsMenuManager.Load();
-        Settings.LoadVolume();
+        Settings.LoadSettings();
     }
 
     public void Show()

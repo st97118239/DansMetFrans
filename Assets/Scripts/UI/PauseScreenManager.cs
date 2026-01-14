@@ -13,6 +13,9 @@ public class PauseScreenManager : MonoBehaviour
 
         songManager.ShowIndicators(shouldPause);
 
+        if (!shouldPause)
+            songManager.OnUpdateSettings();
+
         Time.timeScale = shouldPause ? 0 : 1;
         AudioListener.pause = shouldPause;
     }

@@ -16,6 +16,10 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Transform leftHandHitCollider;
     [SerializeField] private Transform rightHandHitCollider;
 
+    [SerializeField] private MeshRenderer headHitRenderer;
+    [SerializeField] private MeshRenderer leftHandHitRenderer;
+    [SerializeField] private MeshRenderer rightHandHitRenderer;
+
     [SerializeField] private GameObject headPrev;
     [SerializeField] private GameObject leftHandPrev;
     [SerializeField] private GameObject rightHandPrev;
@@ -57,6 +61,7 @@ public class SongManager : MonoBehaviour
 
     private bool hasPreview;
     public bool hasFinished;
+    private bool showPreviews = true;
 
     private Coroutine resetCollidersCoroutine;
 
@@ -79,6 +84,7 @@ public class SongManager : MonoBehaviour
         pointText = GameObject.Find("PointText").GetComponent<TMP_Text>();
 
         settingsMenuManager.Load();
+        OnUpdateSettings();
 
         defaultObjectsPos = new Vector3[objectsTrans.Length];
 
@@ -147,7 +153,7 @@ public class SongManager : MonoBehaviour
                 beat++;
             }
 
-            if (!hasPreview && beat <= beats.Count - 1)
+            if (showPreviews && !hasPreview && beat <= beats.Count - 1)
             {
                 float beatsTillHit = beatLoopIdx + 1 + previewBeats - beats[beat];
                 if (beats.Count >= beat + 1 && beatsTillHit <= previewBeats && beatsTillHit > 0)
@@ -293,5 +299,13 @@ public class SongManager : MonoBehaviour
 
         //foreach (Transform trans in objectsTrans)
         //    trans.localPosition = new Vector3(trans.localPosition.x, trans.localPosition.y + Settings.heightDiff, trans.localPosition.z);
+    }
+
+    public void OnUpdateSettings()
+    {
+        showPreviews = Settings.showPreviews;
+        headHitRenderer.enabled = showPreviews;
+        leftHandHitRenderer.enabled = showPreviews;
+        rightHandHitRenderer.enabled = showPreviews;
     }
 }

@@ -840,6 +840,9 @@ MonoBehaviour:
   headHitCollider: {fileID: 90004391}
   leftHandHitCollider: {fileID: 279497408}
   rightHandHitCollider: {fileID: 1502420897}
+  headHitRenderer: {fileID: 90004392}
+  leftHandHitRenderer: {fileID: 279497409}
+  rightHandHitRenderer: {fileID: 1502420898}
   headPrev: {fileID: 1503698627}
   leftHandPrev: {fileID: 1075629274}
   rightHandPrev: {fileID: 534663239}
@@ -4043,6 +4046,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &731833031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5765583354498904450, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+  m_PrefabInstance: {fileID: 1281389690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
 --- !u!1 &735189677
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,15 +6348,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.489
       objectReference: {fileID: 0}
     - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.489
       objectReference: {fileID: 0}
     - target: {fileID: 1165791535934315997, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -6401,20 +6415,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1846841550}
     - target: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: showPrevsToggle
+      value: 
+      objectReference: {fileID: 731833031}
+    - target: {fileID: 1284364527736281008, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: pauseScreenManager
       value: 
       objectReference: {fileID: 575926492}
     - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.518
       objectReference: {fileID: 0}
     - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.518
       objectReference: {fileID: 0}
     - target: {fileID: 2471908524691299945, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -6454,11 +6472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5094658653404101892, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.489
       objectReference: {fileID: 0}
     - target: {fileID: 5094658653404101892, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5464546459352132065, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_Pivot.x
@@ -6540,13 +6558,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5765583354498904450, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1846841550}
+    - target: {fileID: 5765583354498904450, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFXSound
+      objectReference: {fileID: 0}
     - target: {fileID: 6748298539081447175, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.518
       objectReference: {fileID: 0}
     - target: {fileID: 6748298539081447175, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_Name
@@ -8565,6 +8591,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 611124657543359463, guid: abac0c02a45392547be1eb68575e830e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751636938568287372, guid: abac0c02a45392547be1eb68575e830e, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2284000688629940508, guid: abac0c02a45392547be1eb68575e830e, type: 3}
