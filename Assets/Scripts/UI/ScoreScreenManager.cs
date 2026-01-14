@@ -10,23 +10,25 @@ public class ScoreScreenManager : MonoBehaviour
 
     [SerializeField] private int[] rankPoints;
 
+    [SerializeField] private int rankAmt = 6;
+
     [SerializeField] private int mainMenuSceneIdx;
 
-    public void Show(int points, bool isNewHighScore)
+    public void Show(int points, bool isNewHighScore, int poseAmt, int hitAmt)
     {
         pointsText.text = points.ToString();
 
-        int maxRankIdx = rankPoints.Length - 1;
+        int rankUpAmt = poseAmt / rankAmt;
+        Debug.Log(rankUpAmt);
+
         int rankIdx = 0;
-
-        for (int i = 0; i < maxRankIdx; i++)
+        while (hitAmt > rankUpAmt)
         {
-            if (points > rankPoints[i])
-                continue;
-
-            rankIdx = i - 1;
-            break;
+            rankIdx++;
+            hitAmt = -rankUpAmt;
         }
+
+        Debug.Log(rankIdx);
 
         string rank = rankIdx switch
         {

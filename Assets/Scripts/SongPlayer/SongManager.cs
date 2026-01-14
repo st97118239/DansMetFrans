@@ -28,6 +28,9 @@ public class SongManager : MonoBehaviour
     [SerializeField] private Transform leftHandCollider;
     [SerializeField] private Transform rightHandCollider;
 
+    [SerializeField] private MeshRenderer leftHandRenderer;
+    [SerializeField] private MeshRenderer rightHandRenderer;
+
     [SerializeField] private GameObject[] handIndicators;
 
     [SerializeField] private Transform camTrans;
@@ -53,11 +56,11 @@ public class SongManager : MonoBehaviour
     [SerializeField] private int previewBeats;
 
     public int score;
+    private int hitAmt;
 
     private List<ChartData> chart;
     private PopupData[] popupChart;
     private readonly List<int> beats = new();
-    private readonly List<int> popupBeats = new();
 
     private bool hasPreview;
     public bool hasFinished;
@@ -76,8 +79,8 @@ public class SongManager : MonoBehaviour
         foreach (GameObject indicator in handIndicators)
             indicator.SetActive(false);
 
-        leftHandCollider.GetComponent<MeshRenderer>().enabled = true;
-        rightHandCollider.GetComponent<MeshRenderer>().enabled = true;
+        leftHandRenderer.enabled = true;
+        rightHandRenderer.enabled = true;
 
         camTrans = GameObject.Find("Camera Offset").transform;
 
@@ -226,6 +229,7 @@ public class SongManager : MonoBehaviour
 
         if (headDist <= maxHitDistance)
         {
+            hitAmt++;
             float headPoints = (1 - headDist) * 100;
             AddPoints(Mathf.RoundToInt(headPoints));
         }
@@ -234,6 +238,7 @@ public class SongManager : MonoBehaviour
 
         if (lHandDist <= maxHitDistance)
         {
+            hitAmt++;
             float lHandPoints = (1 - lHandDist) * 100;
             AddPoints(Mathf.RoundToInt(lHandPoints));
         }
@@ -242,6 +247,7 @@ public class SongManager : MonoBehaviour
 
         if (rHandDist <= maxHitDistance)
         {
+            hitAmt++;
             float rHandPoints = (1 - rHandDist) * 100;
             AddPoints(Mathf.RoundToInt(rHandPoints));
         }
@@ -264,7 +270,7 @@ public class SongManager : MonoBehaviour
             PlayerPrefs.SetInt("hs" + SongReader.Songs[SongReader.selectedSongIdx].songName, score);
         }
 
-        scoreScreenManager.Show(score, isNewHighScore);
+        scoreScreenManager.Show(score, isNewHighScore, beats.Count * 3, hitAmt);
 
         ShowIndicators(true);
     }

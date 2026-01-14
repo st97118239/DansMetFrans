@@ -22,14 +22,17 @@ public static class Settings
     {
         musicVolume = PlayerPrefs.GetFloat("musicVolume", 1);
         sfxVolume = PlayerPrefs.GetFloat("sfxVolume", 1);
-        showPreviews = PlayerPrefs.GetInt("showPreviews", 1) != 0;
+        showPreviews = PlayerPrefs.GetInt("ShowPreviews", 1) != 0;
     }
 
     public static void SaveSettings()
     {
         PlayerPrefs.SetFloat("musicVolume", musicVolume);
         PlayerPrefs.SetFloat("sfxVolume", sfxVolume);
-        PlayerPrefs.SetInt("ShowPreviews", !showPreviews ? 0 : 1);
+        if (showPreviews)
+            PlayerPrefs.SetInt("ShowPreviews", 1);
+        else if (!showPreviews)
+            PlayerPrefs.SetInt("ShowPreviews", 0);
     }
 
     public static void ResetSettings()

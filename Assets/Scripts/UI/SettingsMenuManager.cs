@@ -32,6 +32,8 @@ public class SettingsMenuManager : MonoBehaviour
         musicSlider.value = Settings.musicVolume;
         sfxSlider.value = Settings.sfxVolume;
         showPrevsToggle.isOn = Settings.showPreviews;
+        if (songManager)
+            songManager.OnUpdateSettings();
     }
 
     public void Show()
