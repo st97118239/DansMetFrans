@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +9,7 @@ public class Popup : MonoBehaviour
 
     public void Load(PopupData popupData)
     {
-        image.sprite = songManager.popupSprites[Random.Range(0, songManager.popupSprites.Length - 1)];
+        image.sprite = songManager.popupSprites[popupData.idx];
         trans.position = popupData.posV; 
         trans.localRotation = Quaternion.Euler(popupData.rotV);
         trans.localScale = popupData.scaleV;

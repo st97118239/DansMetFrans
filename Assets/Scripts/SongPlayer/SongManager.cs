@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SongManager : MonoBehaviour
 {
@@ -104,6 +103,8 @@ public class SongManager : MonoBehaviour
             await SongReader.GetSongs();
         }
 
+        //SongReader.selectedSongIdx = 2;
+
         lightManager.LoadLights();
         LoadPerformer();
         LoadPopups();
@@ -121,6 +122,14 @@ public class SongManager : MonoBehaviour
     private void LoadPopups()
     {
         popupChart = SongReader.Songs[SongReader.selectedSongIdx].popups;
+
+        for (int t = 0; t < popupSprites.Length; t++)
+        {
+            Sprite tmp = popupSprites[t];
+            int r = Random.Range(t, popupSprites.Length);
+            popupSprites[t] = popupSprites[r];
+            popupSprites[r] = tmp;
+        }
 
         foreach (PopupData popup in popupChart) 
             popups[popup.idx].Load(popup);
