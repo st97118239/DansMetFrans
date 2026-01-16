@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &87689969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -527,6 +527,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2dbd175ac815dcb488aecbd9f684c5de, type: 3}
   - {fileID: 21300000, guid: 778e71c546731004a88b409630f612c1, type: 3}
   - {fileID: 21300000, guid: 49681a89b7ccdfb4fa4b7bb52a68b7b6, type: 3}
+  - {fileID: 21300000, guid: 1198304a6d936e74f9454dac98d22ee9, type: 3}
   pointText: {fileID: 0}
   maxHitDistance: 0.5
   performerPrefabs:
@@ -597,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1689252397612185743, guid: 0f9c32b44226fc9419f683100013cad7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2034147877535015477, guid: 0f9c32b44226fc9419f683100013cad7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583932899982945396, guid: 60370afbed05a5d458fb51612bfe03b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1282,7 +1283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &512901311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1923,7 +1924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0214d2b16f856504a9e40603480698ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1198304a6d936e74f9454dac98d22ee9, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2734,7 +2735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0214d2b16f856504a9e40603480698ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49681a89b7ccdfb4fa4b7bb52a68b7b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4316,7 +4317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2119900446
 RectTransform:
   m_ObjectHideFlags: 0
