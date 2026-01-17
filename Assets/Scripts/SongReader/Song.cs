@@ -7,6 +7,7 @@ public class Song
     public string songName;
     public int idx;
     public int performerIdx;
+    public bool useOldPerformerPos;
     public Sprite coverArt;
     public Sprite titleArt;
     public AudioClip audio;

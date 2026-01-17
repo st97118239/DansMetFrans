@@ -2,117 +2,88 @@
     "songName": "Macarena",
     "idx": 2,
     "performerIdx": 2,
-    "bpm": 150,
+    "useOldPerformerPos": false,
+    "bpm": 103,
     "chartStartDelay": 5.187,
     "audioStartDelay": 0.0,
     "chart": [
         {
-            "beat": 4,
+            "beat": 0,
             "headPos": [0, 1.79,0],
-            "leftHandPos": [-0.561, 1.55, 0.098],
-            "rightHandPos": [0.555, 0.652, 0.098]
+            "leftHandPos": [-0.248, 1.438, 0.699],
+            "rightHandPos": [0.248, 1.438, 0.699]
         },
         {
-            "beat": 8,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.537],
-            "rightHandPos": [0.313, 1.118, 0.537]
+            "beat": 1,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.248, 1.438, 0.699],
+            "rightHandPos": [0.248, 1.438, 0.699]
+        },
+        {
+            "beat": 2,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.248, 1.438, 0.699],
+            "rightHandPos": [0.248, 1.438, 0.699]
+        },
+        {
+            "beat": 3,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.248, 1.438, 0.699],
+            "rightHandPos": [0.248, 1.438, 0.699]
+        },
+        {
+            "beat": 4,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.248, 1.438, 0.699],
+            "rightHandPos": [-0.3, 1.512, 0]
+        },
+        {
+            "beat": 5,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [0.3, 1.512, 0],
+            "rightHandPos": [-0.3, 1.512, 0]
+        },
+        {
+            "beat": 6,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [0.3, 1.512, 0],
+            "rightHandPos": [0.227, 1.996, 0.033]
+        },
+        {
+            "beat": 7,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.227, 1.996, 0.033],
+            "rightHandPos": [0.227, 1.996, 0.033]
+        },
+        {
+            "beat": 9,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.227, 1.996, 0.033],
+            "rightHandPos": [-0.315, 1.138, 0.07]
+        },
+        {
+            "beat": 10,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [0.315, 1.138, 0.07],
+            "rightHandPos": [-0.315, 1.138, 0.07]
+        },
+        {
+            "beat": 11,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [0.315, 1.138, 0.07],
+            "rightHandPos": [0.313, 1.064, 0]
         },
         {
             "beat": 12,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.537],
-            "rightHandPos": [0.313, 1.5, 0.537]
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.313, 1.064, 0],
+            "rightHandPos": [0.313, 1.064, 0]
         },
         {
             "beat": 16,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-0.561, 1.55, 0.098],
-            "rightHandPos": [0.555, 0.652, 0.098]
-        },
-        {
-            "beat": 20,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.437],
-            "rightHandPos": [0.313, 1.118, 0.437]
-        },
-        {
-            "beat": 24,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.437],
-            "rightHandPos": [0.313, 1.5, 0.437]
-        },
-        {
-            "beat": 28,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-0.561, 1.55, 0.098],
-            "rightHandPos": [0.555, 0.652, 0.098]
-        },
-        {
-            "beat": 32,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.537],
-            "rightHandPos": [0.313, 1.118, 0.537]
-        },
-        {
-            "beat": 36,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.537],
-            "rightHandPos": [0.313, 1.5, 0.537]
-        },
-        {
-            "beat": 40,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-0.561, 1.55, 0.098],
-            "rightHandPos": [0.555, 0.652, 0.098]
-        },
-        {
-            "beat": 44,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.537],
-            "rightHandPos": [0.313, 1.118, 0.537]
-        },
-        {
-            "beat": 48,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.537],
-            "rightHandPos": [0.313, 1.5, 0.537]
-        },
-        {
-            "beat": 52,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-0.561, 1.55, 0.098],
-            "rightHandPos": [0.555, 0.652, 0.098]
-        },
-        {
-            "beat": 56,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.537],
-            "rightHandPos": [0.313, 1.118, 0.537]
-        },
-        {
-            "beat": 60,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.537],
-            "rightHandPos": [0.313, 1.5, 0.537]
-        },
-        {
-            "beat": 64,
-            "headPos": [0, 1.79, 0],
-            "leftHandPos": [-0.561, 1.55, 0.098],
-            "rightHandPos": [0.555, 0.652, 0.098]
-        },
-        {
-            "beat": 68,
-            "headPos": [0.1, 1.8, 0],
-            "leftHandPos": [-0.313, 1.118, 0.537],
-            "rightHandPos": [0.313, 1.118, 0.537]
-        },
-        {
-            "beat": 72,
-            "headPos": [0, 1.8, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.537],
-            "rightHandPos": [0.313, 1.5, 0.537]
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.313, 1.064, 0],
+            "rightHandPos": [0.313, 1.064, 0]
         }
     ],
     "lights": [
@@ -122,15 +93,15 @@
                     "beat": -1,
                     "position": [-1.8, 4.35, 7.54],
                     "rotation": [51.6950378, 157.035324, 356.039276],
-                    "color": [255, 248, 186],
+                    "color": [1, 0.972549, 0.3496351],
                     "intensity": 8.5
                 },
                 {
                     "beat": 1,
-                    "position": [ 1.0, 2.0, 3.0],
-                    "rotation": [ 3.0, 2.0, 1.0],
-                    "color": [103, 22, 140],
-                    "intensity": 8.5
+                    "position": [1.0, 2.0, 3.0],
+                    "rotation": [3.0, 2.0, 1.0],
+                    "color": [1, 1, 1],
+                    "intensity": 400
                 }
             ]
         }

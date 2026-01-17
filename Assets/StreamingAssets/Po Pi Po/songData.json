@@ -2,6 +2,7 @@
     "songName": "Po Pi Po",
     "idx": 1,
     "performerIdx": 1,
+    "useOldPerformerPos": false,
     "bpm": 150,
     "chartStartDelay": 5.187,
     "audioStartDelay": 0.0,
@@ -122,15 +123,15 @@
                     "beat": -1,
                     "position": [-1.8, 4.35, 7.54],
                     "rotation": [51.6950378, 157.035324, 356.039276],
-                    "color": [255, 248, 186],
+                    "color": [1, 0.972549, 0.3496351],
                     "intensity": 8.5
                 },
                 {
                     "beat": 1,
-                    "position": [ 1.0, 2.0, 3.0],
-                    "rotation": [ 3.0, 2.0, 1.0],
-                    "color": [103, 22, 140],
-                    "intensity": 8.5
+                    "position": [1.0, 2.0, 3.0],
+                    "rotation": [3.0, 2.0, 1.0],
+                    "color": [1, 1, 1],
+                    "intensity": 400
                 }
             ]
         }

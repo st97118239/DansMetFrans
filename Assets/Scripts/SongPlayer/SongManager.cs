@@ -44,6 +44,7 @@ public class SongManager : MonoBehaviour
 
     [SerializeField] private GameObject[] performerPrefabs;
     [SerializeField] private Transform performerPos;
+    [SerializeField] private Transform oldPerformerPos;
     private GameObject performer;
     private Animator performerAnimator;
 
@@ -113,15 +114,18 @@ public class SongManager : MonoBehaviour
 
     private void LoadPerformer()
     {
+        Vector3 pos = SongReader.Songs[SongReader.selectedSongIdx].useOldPerformerPos ? oldPerformerPos.position : performerPos.position;
         performer = Instantiate(performerPrefabs[SongReader.Songs[SongReader.selectedSongIdx].performerIdx],
-            performerPos.position, performerPos.rotation);
+                pos, performerPos.rotation);
         performerAnimator = performer.GetComponent<Animator>();
-        performer.SetActive(false);
+        performer.SetActive(true);
     }
 
     private void LoadPopups()
     {
         popupChart = SongReader.Songs[SongReader.selectedSongIdx].popups;
+
+        if (popupChart == null) return;
 
         for (int t = 0; t < popupSprites.Length; t++)
         {
@@ -131,7 +135,7 @@ public class SongManager : MonoBehaviour
             popupSprites[r] = tmp;
         }
 
-        foreach (PopupData popup in popupChart) 
+        foreach (PopupData popup in popupChart)
             popups[popup.idx].Load(popup);
     }
 

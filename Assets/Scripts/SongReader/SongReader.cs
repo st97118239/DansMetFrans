@@ -70,6 +70,7 @@ public static class SongReader
             song.audioStartDelay = songData.audioStartDelay;
             song.idx = songData.idx;
             song.performerIdx = songData.performerIdx;
+            song.useOldPerformerPos = songData.useOldPerformerPos;
             if (songData.chart.Count > 0)
                 song.chart = songData.chart;
             else

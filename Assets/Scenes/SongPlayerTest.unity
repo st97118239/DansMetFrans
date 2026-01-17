@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &87689969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -532,8 +532,10 @@ MonoBehaviour:
   maxHitDistance: 0.5
   performerPrefabs:
   - {fileID: 2684918771201188638, guid: 46ae67a1dafbee9409b097c7faab2d4d, type: 3}
-  - {fileID: 0}
+  - {fileID: 2684918771201188638, guid: 46ae67a1dafbee9409b097c7faab2d4d, type: 3}
+  - {fileID: 2684918771201188638, guid: 45e66cd6155680a42839ccfc78af539f, type: 3}
   performerPos: {fileID: 1075735476}
+  oldPerformerPos: {fileID: 1525986411}
   hitTime: 0.7
   beatLoopIdx: 0
   previewBeats: 4
@@ -598,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1689252397612185743, guid: 0f9c32b44226fc9419f683100013cad7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2034147877535015477, guid: 0f9c32b44226fc9419f683100013cad7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -704,7 +706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4583932899982945396, guid: 60370afbed05a5d458fb51612bfe03b1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1283,7 +1285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &512901311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2544,7 +2546,7 @@ Transform:
   m_GameObject: {fileID: 1075735475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.43, z: 5}
+  m_LocalPosition: {x: 0, y: 0.47, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3512,6 +3514,37 @@ MonoBehaviour:
   songManager: {fileID: 140887599}
   trans: {fileID: 1511573294}
   image: {fileID: 1511573295}
+--- !u!1 &1525986410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525986411}
+  m_Layer: 0
+  m_Name: OldPerformerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1525986411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525986410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.43, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1724203809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4317,7 +4350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2119900446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4479,6 +4512,7 @@ SceneRoots:
   - {fileID: 1873795770}
   - {fileID: 2014384608}
   - {fileID: 1075735476}
+  - {fileID: 1525986411}
   - {fileID: 2054524912}
   - {fileID: 463508855}
   - {fileID: 1258505521}

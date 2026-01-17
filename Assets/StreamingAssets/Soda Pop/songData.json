@@ -2,6 +2,7 @@
     "songName": "Soda Pop",
     "idx": 0,
     "performerIdx": 0,
+    "useOldPerformerPos": true,
     "bpm": 388,
     "chartStartDelay": 3,
     "audioStartDelay": 0.0,

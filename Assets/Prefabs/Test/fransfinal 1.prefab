@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
       propertyPath: m_Name
-      value: fransfinal
+      value: fransfinal 1
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 2684918771201188638}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3411670d6fe0e3a4a920d311e6d7fbe1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 52484d9fbd03c674194d64ed5a6e494f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e1a5412c0b3b6ff4a940d03063b63436, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

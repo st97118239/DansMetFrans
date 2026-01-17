@@ -6,6 +6,7 @@ public class SongData
     public string songName;
     public int idx;
     public int performerIdx;
+    public bool useOldPerformerPos;
     public float bpm;
     public float chartStartDelay;
     public float audioStartDelay;
