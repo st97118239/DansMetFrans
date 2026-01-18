@@ -528,6 +528,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 778e71c546731004a88b409630f612c1, type: 3}
   - {fileID: 21300000, guid: 49681a89b7ccdfb4fa4b7bb52a68b7b6, type: 3}
   - {fileID: 21300000, guid: 1198304a6d936e74f9454dac98d22ee9, type: 3}
+  - {fileID: 21300000, guid: 7432248b10d0d7a49bf37aa439baaba7, type: 3}
+  - {fileID: 21300000, guid: 77392a84e2521734baf394528bc3c131, type: 3}
+  - {fileID: 21300000, guid: e86371c1c5232e94590e92d5b274d97e, type: 3}
   pointText: {fileID: 0}
   maxHitDistance: 0.5
   performerPrefabs:
