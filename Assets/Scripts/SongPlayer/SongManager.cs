@@ -104,7 +104,7 @@ public class SongManager : MonoBehaviour
             await SongReader.GetSongs();
         }
 
-        SongReader.selectedSongIdx = 2;
+        SongReader.selectedSongIdx = 1;
 
         lightManager.LoadLights();
         LoadPerformer();
@@ -161,9 +161,9 @@ public class SongManager : MonoBehaviour
 
         performerAnimator.SetTrigger("StartDance");
 
-        for (beatLoopIdx = 0; beatLoopIdx < beats[^1]; beatLoopIdx++)
+        for (beatLoopIdx = 0; beatLoopIdx <= beats[^1]; beatLoopIdx++)
         {
-            if (beats[beat] == beatLoopIdx + 1)
+            if (beats[beat] == beatLoopIdx)
             {
                 SetColliders();
                 beat++;
@@ -176,17 +176,14 @@ public class SongManager : MonoBehaviour
                     SetPreview();
             }
 
-            //if (popupBeats.Count > popupBeat && popupBeats[popupBeat] == beatLoopIdx + 1)
-            //{
-            //    popups[popupChart[popupBeat].idx].Load(popupChart[popupBeat]);
-            //    popupBeat++;
-            //}
-
             yield return wait1Beat;
+
+            if (beatLoopIdx != beats[^1]) continue;
+            ResetPreview();
+            for (int i = 0; i < 5; i++)
+                yield return wait1Beat;
+
         }
-
-        for (int i = 0; i < 5; i++)
-            yield return wait1Beat;
 
         hasFinished = true;
 
@@ -196,7 +193,10 @@ public class SongManager : MonoBehaviour
     private void SetColliders()
     {
         if (resetCollidersCoroutine != null)
+        {
             StopCoroutine(resetCollidersCoroutine);
+            CalculatePoints();
+        }
         if (hasPreview)
             ResetPreview();
         headHitCollider.transform.position = chart[beat].headPosV;
@@ -238,6 +238,8 @@ public class SongManager : MonoBehaviour
 
     private void CalculatePoints()
     {
+        bool miss = false;
+
         float headDist = Vector3.Distance(headHitCollider.position, headCollider.position);
 
         if (headDist <= maxHitDistance)
@@ -246,6 +248,8 @@ public class SongManager : MonoBehaviour
             float headPoints = (1 - headDist) * 100;
             AddPoints(Mathf.RoundToInt(headPoints));
         }
+        else
+            miss = true;
 
         float lHandDist = Vector3.Distance(leftHandHitCollider.position, leftHandCollider.position);
 
@@ -255,6 +259,8 @@ public class SongManager : MonoBehaviour
             float lHandPoints = (1 - lHandDist) * 100;
             AddPoints(Mathf.RoundToInt(lHandPoints));
         }
+        else
+            miss = true;
 
         float rHandDist = Vector3.Distance(rightHandHitCollider.position, rightHandCollider.position);
 
@@ -264,8 +270,13 @@ public class SongManager : MonoBehaviour
             float rHandPoints = (1 - rHandDist) * 100;
             AddPoints(Mathf.RoundToInt(rHandPoints));
         }
+        else
+            miss = true;
 
         pointText.text = score.ToString();
+
+        if (miss)
+            audioManager.PlayMissSound();
     }
 
     private void AddPoints(int pointAmt)

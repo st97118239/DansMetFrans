@@ -7,7 +7,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicPlayer;
     public AudioSource sfxPlayer;
 
-    [SerializeField] private AudioClip sfxSound;
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private AudioClip missSound;
 
     private void Start()
     {
@@ -38,6 +39,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFXSound()
     {
-        sfxPlayer.PlayOneShot(sfxSound);
+        sfxPlayer.PlayOneShot(clickSound);
+    }
+
+    public void PlayMissSound()
+    {
+        sfxPlayer.PlayOneShot(missSound);
     }
 }
