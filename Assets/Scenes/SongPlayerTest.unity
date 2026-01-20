@@ -536,8 +536,8 @@ MonoBehaviour:
   maxHitDistance: 0.5
   performerPrefabs:
   - {fileID: 2684918771201188638, guid: 46ae67a1dafbee9409b097c7faab2d4d, type: 3}
-  - {fileID: 2684918771201188638, guid: 46ae67a1dafbee9409b097c7faab2d4d, type: 3}
-  - {fileID: 2684918771201188638, guid: 45e66cd6155680a42839ccfc78af539f, type: 3}
+  - {fileID: 1389255269073476026, guid: 847b242f30600bc4ca347d44c39d9af0, type: 3}
+  - {fileID: 5704176704624815514, guid: e287445babd51cf4e809792b71c30dd1, type: 3}
   performerPos: {fileID: 1075735476}
   oldPerformerPos: {fileID: 1525986411}
   hitTime: 0.7

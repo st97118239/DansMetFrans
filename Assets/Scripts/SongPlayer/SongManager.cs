@@ -104,7 +104,7 @@ public class SongManager : MonoBehaviour
             await SongReader.GetSongs();
         }
 
-        //SongReader.selectedSongIdx = 2;
+        SongReader.selectedSongIdx = 2;
 
         lightManager.LoadLights();
         LoadPerformer();
