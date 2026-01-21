@@ -239,6 +239,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.489
+      objectReference: {fileID: 0}
+    - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597989404177135478, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.489
+      objectReference: {fileID: 0}
     - target: {fileID: 1165791535934315997, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -279,6 +291,18 @@ PrefabInstance:
       propertyPath: showPrevsToggle
       value: 
       objectReference: {fileID: 2006387718}
+    - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594125325598602978, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.518
+      objectReference: {fileID: 0}
     - target: {fileID: 2471908524691299945, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -306,6 +330,14 @@ PrefabInstance:
     - target: {fileID: 2471908524691299945, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094658653404101892, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.489
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094658653404101892, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5464546459352132065, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_Pivot.x
@@ -391,6 +423,14 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1879176835}
+    - target: {fileID: 6748298539081447175, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748298539081447175, guid: 7dcc926259093dd41872e1732040f555, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7945000982436585394, guid: 7dcc926259093dd41872e1732040f555, type: 3}
       propertyPath: m_Name
       value: Settings
