@@ -104,8 +104,6 @@ public class SongManager : MonoBehaviour
             await SongReader.GetSongs();
         }
 
-        SongReader.selectedSongIdx = 1;
-
         lightManager.LoadLights();
         LoadPerformer();
         LoadPopups();
@@ -334,7 +332,7 @@ public class SongManager : MonoBehaviour
     public void OnUpdateSettings()
     {
         showPreviews = Settings.showPreviews;
-        headHitRenderer.enabled = showPreviews;
+        //headHitRenderer.enabled = showPreviews;
         leftHandHitRenderer.enabled = showPreviews;
         rightHandHitRenderer.enabled = showPreviews;
     }

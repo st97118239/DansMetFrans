@@ -164,28 +164,640 @@
             "rightHandPos": [0.546, 1.077, 0.021]
         },
         {
-            "beat": 94,
+            "beat": 95,
             "headPos": [0, 1.79,0],
             "leftHandPos": [-0.546, 1.077, 0.021],
             "rightHandPos": [0.328, 1.805, -0.036]
         },
         {
-            "beat": 96,
+            "beat": 97,
             "headPos": [0, 1.79,0],
             "leftHandPos": [-0.328, 1.805, -0.036],
             "rightHandPos": [0.546, 1.077, 0.021]
         },
         {
             "beat": 98,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.546, 1.077, 0.021],
+            "rightHandPos": [0.328, 1.805, -0.036]
+        },
+        {
+            "beat": 99,
+            "headPos": [0, 1.79,0],
+            "leftHandPos": [-0.328, 1.805, -0.036],
+            "rightHandPos": [0.546, 1.077, 0.021]
+        },
+        {
+            "beat": 101,
             "headPos": [-0.253, 1.79, 0.364],
             "leftHandPos": [-0.907, 1.688, -0.239],
             "rightHandPos": [0.128, 1.0765, 1.09]
         },
         {
-            "beat": 400,
-            "headPos": [0, 1.79, 0.1],
-            "leftHandPos": [-0.313, 1.5, 0.537],
-            "rightHandPos": [0.313, 1.5, 0.537]
+            "beat": 103,
+            "headPos": [-0.516, 1.79, 0.667],
+            "leftHandPos": [-1.29, 1.633, 0.201],
+            "rightHandPos": [0.258, 1.0765, 1.019]
+        },
+        {
+            "beat": 104,
+            "headPos": [-0.424, 1.79, 0.865],
+            "leftHandPos": [-1.224, 1.633, 1.403],
+            "rightHandPos": [0.417, 1.0765, 0.045]
+        },
+        {
+            "beat": 105,
+            "headPos": [-0.301, 1.79, 0.849],
+            "leftHandPos": [-0.819, 1.633, 1.618],
+            "rightHandPos": [0.001, 1.0765, -0.101]
+        },
+        {
+            "beat": 106,
+            "headPos": [-0.071, 1.79, 0.895],
+            "leftHandPos": [-0.154, 1.633, 1.963],
+            "rightHandPos": [-0.037, 1.0765, -0.166]
+        },
+        {
+            "beat": 107,
+            "headPos": [0.2, 1.79, 0.836],
+            "leftHandPos": [0.297, 1.633, 1.979],
+            "rightHandPos": [-0.037, 1.0765, -0.166]
+        },
+        {
+            "beat": 108,
+            "headPos": [0.677, 1.79, 0.512],
+            "leftHandPos": [1.302, 1.633, 1.359],
+            "rightHandPos": [-0.213, 1.0765, -0.066]
+        },
+        {
+            "beat": 110,
+            "headPos": [0.883, 1.79, 0.158],
+            "leftHandPos": [1.864, 1.633, 0.605],
+            "rightHandPos": [-0.281, 1.0765, 0.012]
+        },
+        {
+            "beat": 112,
+            "headPos": [0.682, 1.79, -0.613],
+            "leftHandPos": [1.535, 1.633, -1.368],
+            "rightHandPos": [0.128, 1.0765, 0.167]
+        },
+        {
+            "beat": 113,
+            "headPos": [0.174, 1.79, -0.884],
+            "leftHandPos": [0.22, 1.633, -1.916],
+            "rightHandPos": [0.128, 1.0765, 0.06]
+        },
+        {
+            "beat": 114,
+            "headPos": [-0.219, 1.79, -0.855],
+            "leftHandPos": [-0.542, 1.0765, -1.696],
+            "rightHandPos": [0.128, 1.0765, 0.06]
+        },
+        {
+            "beat": 116,
+            "headPos": [-0.219, 1.79, -0.855],
+            "leftHandPos": [-0.542, 1.0765, -1.696],
+            "rightHandPos": [0.128, 1.633, 0.06]
+        },
+        {
+            "beat": 118,
+            "headPos": [-0.257, 1.79, -0.805],
+            "leftHandPos": [0.492, 1.0765, -1.748],
+            "rightHandPos": [-0.658, 1.633, -0.044]
+        },
+        {
+            "beat": 119,
+            "headPos": [-0.257, 1.79, -0.805],
+            "leftHandPos": [0.72, 1.0765, -0.823],
+            "rightHandPos": [-1.085, 1.633, -0.664]
+        },
+        {
+            "beat": 120,
+            "headPos": [-0.267, 1.79, -0.805],
+            "leftHandPos": [0.643, 1.0765, -0.452],
+            "rightHandPos": [-1.054, 1.633, -1.15]
+        },
+        {
+            "beat": 121,
+            "headPos": [-0.257, 1.79, -0.805],
+            "leftHandPos": [0.437, 1.0765, -0.01],
+            "rightHandPos": [-0.818, 1.633, -1.527]
+        },
+        {
+            "beat": 122,
+            "headPos": [-0.257, 1.79, -0.805],
+            "leftHandPos": [0.071, 1.0765, 0.185],
+            "rightHandPos": [-0.3, 1.633, -1.714]
+        },
+        {
+            "beat": 123,
+            "headPos": [-0.044, 1.79, -0.846],
+            "leftHandPos": [-0.137, 1.0765, 0.187],
+            "rightHandPos": [0.032, 1.633, -1.799]
+        },
+        {
+            "beat": 124,
+            "headPos": [0.23, 1.79, -0.717],
+            "leftHandPos": [-0.396, 1.0765, 0.21],
+            "rightHandPos": [0.765, 1.633, -1.466]
+        },
+        {
+            "beat": 125,
+            "headPos": [0.639, 1.79, -0.472],
+            "leftHandPos": [-0.392, 1.0765, 0.123],
+            "rightHandPos": [1.38, 1.633, -1.052]
+        },
+        {
+            "beat": 126,
+            "headPos": [0.724, 1.79, -0.095],
+            "leftHandPos": [-0.444, 1.0765, -0.096],
+            "rightHandPos": [1.574, 1.633, -0.058]
+        },
+        {
+            "beat": 127,
+            "headPos": [0.563, 1.79, 0.297],
+            "leftHandPos": [-0.391, 1.0765, -0.514],
+            "rightHandPos": [1.353, 1.633, 0.799]
+        },
+        {
+            "beat": 128,
+            "headPos": [0.418, 1.79, 0.38],
+            "leftHandPos": [-0.105, 1.0765, -0.569],
+            "rightHandPos": [0.846, 1.633, 1.035]
+        },
+        {
+            "beat": 132,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 135,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 138,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 139,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 142,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 143,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 144,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 146,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 151,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 153,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 155,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.75, 1.0765, 0],
+            "rightHandPos": [0.75, 1.0765, 0]
+        },
+        {
+            "beat": 158,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.317, 2.185, 0],
+            "rightHandPos": [0.351, 1.0765, 0.035]
+        },
+        {
+            "beat": 164,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.135, 1.451, 0.349],
+            "rightHandPos": [0.351, 1.0765, 0.035]
+        },
+        {
+            "beat": 165,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.702, 1.451, 0.349],
+            "rightHandPos": [0.351, 1.0765, 0.035]
+        },
+        {
+            "beat": 166,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.317, 2.185, 0],
+            "rightHandPos": [0.351, 1.0765, 0.035]
+        },
+        {
+            "beat": 167,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.405, 0.845, 0.349],
+            "rightHandPos": [0.351, 1.0765, 0.035]
+        },
+        {
+            "beat": 168,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.732, 1.793, 0.349],
+            "rightHandPos": [0.351, 1.0765, 0.035]
+        },
+        {
+            "beat": 169,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 1.793, 0.395],
+            "rightHandPos": [0.326, 1.409, 0.312]
+        },
+        {
+            "beat": 171,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.25, 1.409, 0.437]
+        },
+        {
+            "beat": 173,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.286, 1.809, 0.489],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 174,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 175,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.286, 1.809, 0.489],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 176,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 178,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.868, 1.809, 0.025],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 180,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.286, 1.881, 0.37],
+            "rightHandPos": [0.286, 1.881, 0.37]
+        },
+        {
+            "beat": 181,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.286, 1.319, 0.37],
+            "rightHandPos": [0.286, 1.319, 0.37]
+        },
+        {
+            "beat": 185,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.814, 1.444, 0.076],
+            "rightHandPos": [0.814, 2.058, 0.076]
+        },
+        {
+            "beat": 187,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.127, 1.077, 0.409],
+            "rightHandPos": [0.127, 1.077, 0.409]
+        },
+        {
+            "beat": 190,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.115, 1.815, 0.53],
+            "rightHandPos": [0.127, 1.34, 0.55]
+        },
+        {
+            "beat": 193,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.841, 1.753, -0.009],
+            "rightHandPos": [0.678, 1.34, 0.112]
+        },
+        {
+            "beat": 196,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.841, 1.753, -0.009],
+            "rightHandPos": [0.197, 1.34, 0.57]
+        },
+        {
+            "beat": 197,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.06, 1.587, 0.477],
+            "rightHandPos": [0.197, 1.34, 0.57]
+        },
+        {
+            "beat": 198,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.197, 1.34, 0.57]
+        },
+        {
+            "beat": 199,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.549, 1.38, 0.183],
+            "rightHandPos": [0.197, 1.34, 0.57]
+        },
+        {
+            "beat": 200,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.194, 1.48, 0.49],
+            "rightHandPos": [0.197, 1.34, 0.57]
+        },
+        {
+            "beat": 201,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.649, 1.752, 0.164],
+            "rightHandPos": [0.197, 1.34, 0.57]
+        },
+        {
+            "beat": 203,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.475, 2.207, 0.075],
+            "rightHandPos": [0.167, 1.226, 0.374]
+        },
+        {
+            "beat": 205,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.475, 1.877, 0.075],
+            "rightHandPos": [0.167, 1.226, 0.374]
+        },
+        {
+            "beat": 207,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.475, 2.207, 0.075],
+            "rightHandPos": [0.167, 1.226, 0.374]
+        },
+        {
+            "beat": 208,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.259, 1.515, 0.477],
+            "rightHandPos": [0.259, 1.515, 0.477]
+        },
+        {
+            "beat": 209,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.311, 2.123, -0.067],
+            "rightHandPos": [0.311, 2.123, -0.067]
+        },
+        {
+            "beat": 210,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.311, 2.123, 0.438],
+            "rightHandPos": [0.311, 2.123, 0.438]
+        },
+        {
+            "beat": 211,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.311, 1.559, 0.438],
+            "rightHandPos": [0.311, 1.559, 0.438]
+        },
+        {
+            "beat": 215,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.612, 1.889, 0.122],
+            "rightHandPos": [0.612, 1.889, 0.122]
+        },
+        {
+            "beat": 218,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 220,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 222,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 225,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 227,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 229,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 230,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 1.793, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 231,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 232,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 235,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 236,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 239,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 241,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 245,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 247,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 248,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 251,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 253,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 255,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 256,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 1.793, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 257,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 259,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 260,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 262,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 265,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 267,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 269,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 270,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 1.793, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 271,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.436, 2.213, 0.265],
+            "rightHandPos": [0.287, 1.138, 0.404]
+        },
+        {
+            "beat": 273,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 274,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 276,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 280,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [0.092, 1.336, 0.496],
+            "rightHandPos": [0.185, 1.793, 0.498]
+        },
+        {
+            "beat": 281,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
+        },
+        {
+            "beat": 300,
+            "headPos": [0, 1.79, 0],
+            "leftHandPos": [-0.576, 1.834, 0.161],
+            "rightHandPos": [0.185, 1.466, 0.498]
         }
     ],
     "lights": [
