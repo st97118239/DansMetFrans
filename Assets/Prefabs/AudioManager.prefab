@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicPlayer: {fileID: 2047856321673865191}
   sfxPlayer: {fileID: 9102329732484370767}
-  sfxSound: {fileID: 8300000, guid: 017d2f3ec060bc34facd50e3e040e35a, type: 3}
+  clickSound: {fileID: 8300000, guid: 017d2f3ec060bc34facd50e3e040e35a, type: 3}
+  missSound: {fileID: 8300000, guid: bf558838d8c85f34dbb4fc91a7af9ae9, type: 3}
 --- !u!82 &2047856321673865191
 AudioSource:
   m_ObjectHideFlags: 0

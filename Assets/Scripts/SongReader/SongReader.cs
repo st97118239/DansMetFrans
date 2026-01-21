@@ -173,11 +173,31 @@ public static class SongReader
             await audioUwr.SendWebRequest();
 
             if (audioUwr.result == UnityWebRequest.Result.ConnectionError || audioUwr.result == UnityWebRequest.Result.ProtocolError)
+            {
                 Debug.Log(audioUwr.error);
+            }
             else
             {
                 AudioClip songClip = DownloadHandlerAudioClip.GetContent(audioUwr);
                 song.audio = songClip;
+            }
+
+            if (song.audio == null)
+            {
+                songPath = path + songListPath + "/song.ogg";
+
+                using UnityWebRequest audioUwr2 = UnityWebRequestMultimedia.GetAudioClip(songPath, AudioType.OGGVORBIS);
+                await audioUwr2.SendWebRequest();
+
+                if (audioUwr2.result == UnityWebRequest.Result.ConnectionError || audioUwr2.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.Log(audioUwr2.error);
+                }
+                else
+                {
+                    AudioClip songClip = DownloadHandlerAudioClip.GetContent(audioUwr2);
+                    song.audio = songClip;
+                }
             }
 
             songs.Add(song);

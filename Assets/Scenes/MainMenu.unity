@@ -1257,6 +1257,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5068816327316259090, guid: 091b46a0090a9104c824677df70e5779, type: 3}
+      propertyPath: missSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bf558838d8c85f34dbb4fc91a7af9ae9, type: 3}
+    - target: {fileID: 5068816327316259090, guid: 091b46a0090a9104c824677df70e5779, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 017d2f3ec060bc34facd50e3e040e35a, type: 3}
     - target: {fileID: 5140479407375910244, guid: 091b46a0090a9104c824677df70e5779, type: 3}
       propertyPath: m_Name
       value: AudioManager
